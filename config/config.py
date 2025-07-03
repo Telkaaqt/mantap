@@ -52,7 +52,7 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002514495816"))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002744466686"))
 
 # Your User ID.
 OWNER_ID = list(
