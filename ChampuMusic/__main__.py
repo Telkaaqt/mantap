@@ -54,6 +54,25 @@ async def init():
     await idle()
 
 
+async def auto_restart():
+    tz = timezone("Asia/Jakarta")
+    cron = croniter.croniter("00 00 * * *", datetime.now(tz))
+    while True:
+        now = datetime.now(tz)
+        next_run = cron.get_next(datetime)
+
+        wait_time = (next_run - now).total_seconds()
+        await asyncio.sleep(wait_time)
+        try:
+            await bot.send_message(
+                OWNER_ID,
+                "<blockquote><b>Restart Daily..\n\nTunggu beberapa menit bot sedang di Restart!!</b></blockquote>",
+            )
+        except Exception:
+            pass
+        os.execl("/bin/bash", "bash", "start")
+        
+        
 if __name__ == "__main__":
     asyncio.get_event_loop_policy().get_event_loop().run_until_complete(init())
     LOGGER("ChampuMusic").info("sᴛᴏᴘᴘɪɴɢ ᴄʜᴀᴍᴘᴜᴍᴜsɪᴄ! ɢᴏᴏᴅʙʏᴇ")
