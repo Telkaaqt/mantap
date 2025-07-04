@@ -15,7 +15,7 @@ API_HASH = getenv("API_HASH", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 
 # Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME" , "LevinemusicBot_Bot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "LevineXMusicBot")
 
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
@@ -71,7 +71,7 @@ UPSTREAM_REPO = getenv(
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "dev")
 GIT_TOKEN = getenv(
-    "GIT_TOKEN", "https://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@github.com/levine23/"
+    "GIT_TOKEN", "https://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@github.com/levine23/mantap"
 )  # Fill this variable if your upstream repository is private
 
 # Only  Links formats are  accepted for this Var value.
