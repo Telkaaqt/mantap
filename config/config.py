@@ -67,11 +67,11 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/levine23/mantap",
+    "https://github.com/levine23/stres",
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "dev")
 GIT_TOKEN = getenv(
-    "GIT_TOKEN", None
+    "GIT_TOKEN", "https://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@github.com/levine23/"
 )  # Fill this variable if your upstream repository is private
 
 # Only  Links formats are  accepted for this Var value.
