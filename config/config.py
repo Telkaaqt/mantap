@@ -21,7 +21,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "AssitantlevineBot1")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
 CLEANMODE_DELETE_MINS = int(
-    getenv("CLEANMODE_MINS", "1")
+    getenv("CLEANMODE_MINS", "")
 )  # Remember to give value in Seconds
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
