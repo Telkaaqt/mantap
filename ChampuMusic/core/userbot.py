@@ -65,7 +65,7 @@ class Userbot(Client):
             try:
                 await self.one.join_chat("mksyasayang")
                 await self.one.join_chat("skandalanet")
-                await self.one.join_chat("skandalbangettt")
+                await self.one.join_chat("skandalanet")
                 await self.one.join_chat("levinstorebgt")
 
             except:
@@ -95,7 +95,7 @@ class Userbot(Client):
             try:
                 await self.two.join_chat("mksyasayang")
                 await self.two.join_chat("skandalanet")
-                await self.two.join_chat("skandalbangettt")
+                await self.two.join_chat("skandalanet")
                 await self.two.join_chat("levinstorebgt")
             except:
                 pass
@@ -119,7 +119,7 @@ class Userbot(Client):
             try:
                 await self.three.join_chat("mksyasayang")
                 await self.three.join_chat("skandalanet")
-                await self.three.join_chat("skandalbangettt")
+                await self.three.join_chat("skandalanet")
                 await self.three.join_chat("levinstorebgt")
             except:
                 pass
@@ -144,7 +144,7 @@ class Userbot(Client):
             try:
                 await self.four.join_chat("mksyasayang")
                 await self.four.join_chat("skandalanet")
-                await self.four.join_chat("skandalbangettt")
+                await self.four.join_chat("skandalanet")
                 await self.four.join_chat("levinstorebgt")
             except:
                 pass
@@ -169,7 +169,7 @@ class Userbot(Client):
             try:
                 await self.five.join_chat("mksyasayang")
                 await self.five.join_chat("skandalanet")
-                await self.five.join_chat("skandalbangettt")
+                await self.five.join_chat("skandalanet")
                 await self.five.join_chat("levinstorebgt")
             except:
                 pass
