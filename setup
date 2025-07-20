@@ -4,16 +4,17 @@
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install -y --no-install-recommends \
     ffmpeg git neofetch apt-utils libmediainfo0v5 \
-    libgl1-mesa-glx libglib2.0-0 fonts-noto-color-emoji tmux python3-venv python3-pip sqlite3 net-tools lsof locales
+    libgl1-mesa-glx libglib2.0-0 fonts-noto-color-emoji \
+    tmux python3-venv python3-pip sqlite3 net-tools lsof locales
 
 sudo apt-get clean
 sudo rm -rf /var/lib/apt/lists/*
 
 # Setup locale
 echo "Setting up locale..."
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-locale-gen
-update-locale LANG=en_US.UTF-8
+echo "en_US.UTF-8 UTF-8" | sudo tee -a /etc/locale.gen
+sudo locale-gen
+sudo update-locale LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -33,13 +34,13 @@ sudo sysctl vm.swappiness=90
 sudo sysctl vm.vfs_cache_pressure=200
 sudo sysctl -p
 
-# ulimit configuration
-echo "* soft nofile 4096" >> /etc/security/limits.conf
-echo "* hard nofile 8192" >> /etc/security/limits.conf
+# Ulimit configuration
+echo "* soft nofile 4096" | sudo tee -a /etc/security/limits.conf
+echo "* hard nofile 8192" | sudo tee -a /etc/security/limits.conf
 
 # Add locale environment to bashrc
-echo "export LC_ALL=en_US.UTF-8" >> /etc/bash.bashrc
-echo "export LANG=en_US.UTF-8" >> /etc/bash.bashrc
+echo "export LC_ALL=en_US.UTF-8" | sudo tee -a /etc/bash.bashrc
+echo "export LANG=en_US.UTF-8" | sudo tee -a /etc/bash.bashrc
 
 # Show status
 echo "Swap status:"
@@ -50,11 +51,4 @@ echo "Locale verification:"
 locale -a | grep en_US
 
 echo "Setup completed successfully!"
-echo "Please reboot or run: source /etc/bash.bashrc"es.DeleteHistory(peer=xin, max_id=0, revoke=True)
-            )
-        except FloodWait as e:
-            await sleep(e.value)
-            await client.invoke(
-                raw.functions.messages.DeleteHistory(peer=xin, max_id=0, revoke=True)
-            )
-    return await msg.delete()
+echo "Please reboot or run: source /etc/bash.bashrc"
