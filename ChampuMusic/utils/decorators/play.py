@@ -163,7 +163,7 @@ def PlayWrapper(command):
             try:
                 await userbot.join_chat(message.chat.username)
                 call_participants_id = [
-                    member.chat.id async for member in userbot.get_call_members(chat_id)
+                    member.chat.id async for member in pytgcalls.get_call_members(chat_id)
                 ]
                 if (
                     await is_active_chat(chat_id)
