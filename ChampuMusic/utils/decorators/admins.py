@@ -1,7 +1,6 @@
 from pyrogram.enums import ChatMemberStatus, ChatType
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import adminlist
 from strings import get_string
 from ChampuMusic import app
 from ChampuMusic.misc import SUDOERS
