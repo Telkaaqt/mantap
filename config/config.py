@@ -52,7 +52,7 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002744466686"))
+LOGGER_ID = int(getenv("LOGGER_ID", "-1002693987692"))
 
 # Your User ID.
 OWNER_ID = list(
@@ -76,7 +76,7 @@ GIT_TOKEN = getenv(
 
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/skandalanet"
+    "SUPPORT_CHANNEL", "https://t.me/mksyabub"
 )  # Example:- https://t.me/akaChampu
 SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/mksyabub"
