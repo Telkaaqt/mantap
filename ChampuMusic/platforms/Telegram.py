@@ -121,14 +121,14 @@ class TeleAPI:
                     completed_size = convert_bytes(current)
                     speed = convert_bytes(speed)
                     text = f"""
-**{app.mention} ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ**
+**>{app.mention} ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ**
 
-**ᴛᴏᴛᴀʟ ғɪʟᴇ sɪᴢᴇ:** {total_size}
-**ᴄᴏᴍᴘʟᴇᴛᴇᴅ:** {completed_size} 
-**ᴘᴇʀᴄᴇɴᴛᴀɢᴇ:** {percentage[:5]}%
+**>ᴛᴏᴛᴀʟ ғɪʟᴇ sɪᴢᴇ:** {total_size}
+**>ᴄᴏᴍᴘʟᴇᴛᴇᴅ:** {completed_size} 
+**>ᴘᴇʀᴄᴇɴᴛᴀɢᴇ:** {percentage[:5]}%
 
-**sᴘᴇᴇᴅ:** {speed}/s
-**ᴇʟᴘᴀsᴇᴅ ᴛɪᴍᴇ:** {eta}"""
+**>sᴘᴇᴇᴅ:** {speed}/s
+**>ᴇʟᴘᴀsᴇᴅ ᴛɪᴍᴇ:** {eta}"""
                     try:
                         await mystic.edit_text(text, reply_markup=upl)
                     except:
