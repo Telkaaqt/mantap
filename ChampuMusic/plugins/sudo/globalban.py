@@ -228,7 +228,7 @@ async def global_ban(client, message: Message):
     current_time = now.strftime("%Y-%m-%d %H:%M:%S")
     gban_by = message.from_user.id
     await add_banned_user(user_id)
-    await message.reply("ᴀᴅᴅᴇᴅ ᴅᴏɴᴇ ✅")
+    await message.reply("<blockquote>ᴀᴅᴅᴇᴅ ᴅᴏɴᴇ</blockquote>")
 
 
 async def global_unban(client, message: Message):
@@ -253,4 +253,4 @@ async def global_unban(client, message: Message):
     if user_id in BANNED_USERS:
         BANNED_USERS.remove(user_id)
     await remove_banned_user(user_id)
-    await message.reply("Unbanned ᴅᴏɴᴇ ✅")
+    await message.reply("<blockquote>Unbanned ᴅᴏɴᴇ</blockquote>")
