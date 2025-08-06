@@ -130,13 +130,11 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
             )
 
             # Construct message
-            left_message = (
-                f"""<blockquote expandable>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱\n║\n
+            left_message =f"""<blockquote expandable>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱\n║\n
                 𝐂ʜᴀᴛ » {title}\n║\n
                 𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ » {userbot.id}\n║\n
                 𝐍ᴀᴍᴇ » @{userbot.username}\n║\n
                 𝐁ᴀɴ 𝐁ʏ » {remove_by}\n</blockquote>"""
-            )
 
             # Create keyboard for unban button
             keyboard = InlineKeyboardMarkup(
