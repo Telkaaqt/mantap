@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from config import BANNED_USERS, LOGGER_ID, OWNER_ID, lyrical
+from config import BANNED_USERS, CHANNEL_USERNAME, LOGGER_ID, OWNER_ID, lyrical
 from ChampuMusic import LOGGER, Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, EMOJIS
 from ChampuMusic.core.call import Champu
 from ChampuMusic.utils import seconds_to_min, time_to_seconds
@@ -32,6 +32,7 @@ user_last_message_time = {}
 user_command_count = {}
 SPAM_WINDOW_SECONDS = 5  # Set the time window for spam checks (5 seconds for example)
 SPAM_THRESHOLD = 2
+
 
 
 @app.on_message(
@@ -60,6 +61,21 @@ async def play_commnd(
     user_id = message.from_user.id
     current_time = time()
     last_message_time = user_last_message_time.get(user_id, 0)
+# Ganti 'CHANNEL_USERNAME' dengan @ atau ID dari channel FSub kamu 
+
+try:
+    member = await client.get_chat_member(CHANNEL_USERNAME, user_id)
+    if member.status in ("left", "kicked"):
+        raise Exception()
+except:
+    return await message.reply_text(
+        "<b>Untuk menggunakan bot ini, silakan join channel terlebih dahulu.</b>",
+        reply_markup=InlineKeyboardMarkup(
+            [[
+                InlineKeyboardButton("Join Channel", url=f"https://t.me/{CHANNEL_USERNAME.strip('@')}")
+            ]]
+        )
+    )
 
     # Spam check logic
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
