@@ -22,7 +22,7 @@ def AdminRightsCheck(mystic):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    "Bot is under maintenance. Please wait for some time..."
+                    "<blockquote>Bot is under maintenance. Please wait for some time...</blockquote>"
                 )
         if await is_commanddelete_on(message.chat.id):
             try:
@@ -39,8 +39,8 @@ def AdminRightsCheck(mystic):
                 [
                     [
                         InlineKeyboardButton(
-                            text="How to Fix this? ",
-                            callback_data="AnonymousAdmin",
+                            text="<blockquote>How to Fix this?</blockquote>",
+                            callback_data="<blockquote>AnonymousAdmin</blockquote>",
                         ),
                     ]
                 ]
@@ -77,7 +77,7 @@ def AdminActual(mystic):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    "Bot is under maintenance. Please wait for some time..."
+                    "<blockquote>Bot is under maintenance. Please wait for some time...</blockquote>"
                 )
         if await is_commanddelete_on(message.chat.id):
             try:
@@ -94,8 +94,8 @@ def AdminActual(mystic):
                 [
                     [
                         InlineKeyboardButton(
-                            text="How to Fix this? ",
-                            callback_data="AnonymousAdmin",
+                            text="<blockquote>How to Fix this?</blockquote>",
+                            callback_data="<blockquote>AnonymousAdmin</blockquote>",
                         ),
                     ]
                 ]
@@ -121,7 +121,7 @@ def ActualAdminCB(mystic):
         if await is_maintenance() is False:
             if CallbackQuery.from_user.id not in SUDOERS:
                 return await CallbackQuery.answer(
-                    "Bot is under maintenance. Please wait for some time...",
+                    "<blockquote>Bot is under maintenance. Please wait for some time...</blockquote>",
                     show_alert=True,
                 )
         try:
@@ -152,7 +152,7 @@ def ActualAdminCB(mystic):
                                 )
                     elif a is None:
                         return await CallbackQuery.answer(
-                            "You are not a member of this chat."
+                            "<blockquote>You are not a member of this chat.</blockquote>"
                         )
             except Exception as e:
                 return await CallbackQuery.answer(f"Error: {str(e)}")
