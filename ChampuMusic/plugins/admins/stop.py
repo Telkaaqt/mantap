@@ -65,8 +65,8 @@ async def stop_music(cli, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="How to Fix this? ",
-                        callback_data="AnonymousAdmin",
+                        text="<blockquote>How to Fix this?</blockquote>",
+                        callback_data="<blockquote>AnonymousAdmin</blockquote>",
                     ),
                 ]
             ]
@@ -122,21 +122,21 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
         if get.status in [ChatMemberStatus.BANNED]:
 
             # Assistant bot has been banned
-            remove_by = member.from_user.mention if member.from_user else "𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ"
+            remove_by = member.from_user.mention if member.from_user else "<blockquote>𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ</blockquote>"
             chat_id = member.chat.id
             title = member.chat.title
             username = (
-                f"@{member.chat.username}" if member.chat.username else "𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ"
+                f"@{member.chat.username}" if member.chat.username else "<blockquote>𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ</blockquote>"
             )
 
             # Construct message
             left_message = (
-                f"╔══❰#𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱══❍⊱❁۪۪\n║\n"
+                <blockquote expandable>f"╔══❰#𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱══❍⊱❁۪۪\n║\n"
                 f"║┣⪼ **𝐂ʜᴀᴛ »** {title}\n║\n"
                 f"║┣⪼ **𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ »** {userbot.id}\n║\n"
                 f"║┣⪼ **𝐍ᴀᴍᴇ »** @{userbot.username}\n║\n"
                 f"║┣⪼ **𝐁ᴀɴ 𝐁ʏ »** {remove_by}\n"
-                f"╚══════════════════❍⊱❁"
+                f"╚══════════════════❍⊱❁"</blockquote>
             )
 
             # Create keyboard for unban button
@@ -144,7 +144,7 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
                 [
                     [
                         InlineKeyboardButton(
-                            "✨𝐔𝐧𝐛𝐚𝐧 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭✨",
+                            "𝐔𝐧𝐛𝐚𝐧 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭",
                             callback_data="unban_userbot",
                         )
                     ]
@@ -188,10 +188,10 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             and member.old_chat_member
         ):
             left_message = (
-                f"**Assistant Has Left This Chat**\n\n"
-                f"**Id:** `{userbot.id}`\n"
-                f"**Name:** @{userbot.username}\n\n"
-                f"**Invite Assistant By: /userbotjoin**"
+                <blockquote expandable>f"Assistant Has Left This Chat**\n\n"
+                f"Id: `{userbot.id}`\n"
+                f"Name: @{userbot.username}\n\n"
+                f"Invite Assistant By: /userbotjoin"</blockquote>
             )
             await app.send_photo(
                 chat_id,
@@ -205,10 +205,10 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             await asyncio.sleep(10)
     except UserNotParticipant:
         left_message = (
-            f"**Assistant Has Left This Chat**\n\n"
+            <blockquote expandable>f"**Assistant Has Left This Chat**\n\n"
             f"**Id:** `{userbot.id}`\n"
             f"**Name:** @{userbot.username}\n\n"
-            f"**Invite Assistant By: /userbotjoin**"
+            f"**Invite Assistant By: /userbotjoin**"</blockquote>
         )
         await app.send_photo(
             chat_id,
@@ -226,7 +226,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
 async def brah(_, msg):
     chat_id = msg.chat.id
     try:
-        await msg.reply("**😍ᴠɪᴅᴇᴏ ᴄʜᴀᴛ sᴛᴀʀᴛᴇᴅ🥳**")
+        await msg.reply("<blockquote>ᴠɪᴅᴇᴏ ᴄʜᴀᴛ sᴛᴀʀᴛᴇᴅ</blockquote>")
         await Champu.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
@@ -240,7 +240,7 @@ async def brah(_, msg):
 async def brah2(_, msg):
     chat_id = msg.chat.id
     try:
-        await msg.reply("**😕ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ💔**")
+        await msg.reply("<blockquote>ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ</blockquote>")
         await Champu.st_stream(chat_id)
         await set_loop(chat_id, 0)
     except Exception as e:
