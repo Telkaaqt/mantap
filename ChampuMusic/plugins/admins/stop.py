@@ -65,8 +65,8 @@ async def stop_music(cli, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="<blockquote>How to Fix this?</blockquote>",
-                        callback_data="<blockquote>AnonymousAdmin</blockquote>",
+                        text="How to Fix this?",
+                        callback_data="AnonymousAdmin",
                     ),
                 ]
             ]
