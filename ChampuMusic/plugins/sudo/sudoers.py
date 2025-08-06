@@ -48,16 +48,16 @@ async def userdel(client, message: Message, _):
 
 @app.on_message(filters.command(["sudolist", "listsudo", "sudoers"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & ~BANNED_USERS)
 async def sudoers_list(client, message: Message):
-    keyboard = [[InlineKeyboardButton("๏ ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ ๏", callback_data="check_sudo_list")]]
+    keyboard = [[InlineKeyboardButton("ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ", callback_data="check_sudo_list")]]
     reply_markups = InlineKeyboardMarkup(keyboard)
-    await message.reply_video(video="https://telegra.ph/file/3c9b53024f150d99032e1.mp4", caption="**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ. ", reply_markup=reply_markups)
+    await message.reply_video(video="<blockquote expandable>https://telegra.ph/file/3c9b53024f150d99032e1.mp4", caption=</blockquote>"<blockquote expandable>**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ.</blockquote>", reply_markup=reply_markups)
     
 
 @app.on_callback_query(filters.regex("^check_sudo_list$"))
 async def check_sudo_list(client, callback_query: CallbackQuery):
     keyboard = []
     if callback_query.from_user.id not in SUDOERS:
-        return await callback_query.answer("sᴏʀʀʏ ʏᴀᴀʀ sɪʀғ ᴏᴡɴᴇʀ ᴏʀ sᴜᴅᴏ ᴡᴀʟᴇ ʜɪ sᴜᴅᴏʟɪsᴛ ᴅᴇᴋʜ sᴀᴋᴛᴇ ʜᴀɪ", show_alert=True)
+        return await callback_query.answer("<blockquote expandable>sᴏʀʀʏ ʏᴀᴀʀ sɪʀғ ᴏᴡɴᴇʀ ᴏʀ sᴜᴅᴏ ᴡᴀʟᴇ ʜɪ sᴜᴅᴏʟɪsᴛ ᴅᴇᴋʜ sᴀᴋᴛᴇ ʜᴀɪ</blockquote>", show_alert=True)
     else:
         user = await app.get_users(OWNER_ID)
 
@@ -67,18 +67,18 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
         else:
             user_mention = user.mention if hasattr(user, 'mention') else user.first_name
 
-        caption = f"**˹ʟɪsᴛ ᴏғ ʙᴏᴛ ᴍᴏᴅᴇʀᴀᴛᴏʀs˼**\n\n**🌹Oᴡɴᴇʀ** ➥ {user_mention}\n\n"
+        caption = f"<blockquote>**˹ʟɪsᴛ ᴏғ ʙᴏᴛ ᴍᴏᴅᴇʀᴀᴛᴏʀs˼**\n\n**Oᴡɴᴇʀ** ➥ {user_mention}\n\n</blockquote>"
 
-        keyboard.append([InlineKeyboardButton("๏ ᴠɪᴇᴡ ᴏᴡɴᴇʀ ๏", url=f"tg://openmessage?user_id={OWNER_ID}")])
+        keyboard.append([InlineKeyboardButton("ᴠɪᴇᴡ ᴏᴡɴᴇʀ", url=f"tg://openmessage?user_id={OWNER_ID}")])
         
         count = 1
         for user_id in SUDOERS:
             if user_id != OWNER_ID:
                 try:
                     user = await app.get_users(user_id)
-                    user_mention = user.mention if user else f"**🎁 Sᴜᴅᴏ {count} ɪᴅ:** {user_id}"
-                    caption += f"**🎁 Sᴜᴅᴏ** {count} **»** {user_mention}\n"
-                    button_text = f"๏ ᴠɪᴇᴡ sᴜᴅᴏ {count} ๏ "
+                    user_mention = user.mention if user else f"<blockquote>** Sᴜᴅᴏ {count} ɪᴅ:** {user_id}</blockquote>"
+                    caption += f"<blockquote>**Sᴜᴅᴏ** {count} **»** {user_mention}\n</blockquote>"
+                    button_text = f"ᴠɪᴇᴡ sᴜᴅᴏ {count} "
                     keyboard.append([InlineKeyboardButton(button_text, url=f"tg://openmessage?user_id={user_id}")])
                     count += 1
                 except Exception as e:
@@ -86,7 +86,7 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
                     continue
 
         # Add a "Back" button at the end
-        keyboard.append([InlineKeyboardButton("๏ ʙᴀᴄᴋ ๏", callback_data="back_to_main_menu")])
+        keyboard.append([InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="back_to_main_menu")])
 
         if keyboard:
             reply_markup = InlineKeyboardMarkup(keyboard)
@@ -94,9 +94,9 @@ async def check_sudo_list(client, callback_query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("^back_to_main_menu$"))
 async def back_to_main_menu(client, callback_query: CallbackQuery):
-    keyboard = [[InlineKeyboardButton("๏ ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ ๏", callback_data="check_sudo_list")]]
+    keyboard = [[InlineKeyboardButton("ᴠɪᴇᴡ sᴜᴅᴏʟɪsᴛ", callback_data="check_sudo_list")]]
     reply_markupes = InlineKeyboardMarkup(keyboard)
-    await callback_query.message.edit_caption(caption="**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ. ", reply_markup=reply_markupes)
+    await callback_query.message.edit_caption(caption="<blockquote expandable>**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n**» ɴᴏᴛᴇ:**  ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ.</blockquote>", reply_markup=reply_markupes)
 
 
 
@@ -111,4 +111,4 @@ async def del_all_sudo(client, message: Message, _):
             if removed:
                 SUDOERS.remove(user_id)
                 count -= 1
-    await message.reply_text(f"ʀᴇᴍᴏᴠᴇᴅ {count} ᴜsᴇʀs ғʀᴏᴍ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.")
+    await message.reply_text(f"<blockquote>ʀᴇᴍᴏᴠᴇᴅ {count} ᴜsᴇʀs ғʀᴏᴍ ᴛʜᴇ sᴜᴅᴏ ʟɪsᴛ.</blockquote>")
