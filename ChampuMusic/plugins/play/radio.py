@@ -57,7 +57,7 @@ def create_triangular_buttons():
 async def radio(
     client, message: Message, _, chat_id, video, channel, playmode, url, fplay
 ):
-    msg = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ...")
+    msg = await message.reply_text("<blockquote>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ...</blockquote>")
 
     try:
         userbot = await get_assistant(message.chat.id)
@@ -65,7 +65,7 @@ async def radio(
 
         if get.status == ChatMemberStatus.BANNED:
             return await msg.edit_text(
-                text=f"» {userbot.mention} ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ {message.chat.title}.\nᴘʟᴇᴀsᴇ ᴜɴʙᴀɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ."
+                text=f"<blockquote expandable>» {userbot.mention} ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ {message.chat.title}.\nᴘʟᴇᴀsᴇ ᴜɴʙᴀɴ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ.</blockquote>"
             )
     except UserNotParticipant:
         pass
@@ -94,7 +94,7 @@ async def play_radio(client, callback_query):
 
     if RADIO_URL:
         await callback_query.message.edit_text(
-            "ᴏᴋ ʙᴀʙʏ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sᴛᴀʀᴛɪɴɢ ʏᴏᴜʀ ʀᴀᴅɪᴏ ɪɴ ᴠᴄ ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴠᴄ ᴀɴᴅ ᴇɴᴊᴏʏ😁"
+            "<blockquote expandable>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sᴛᴀʀᴛɪɴɢ ʏᴏᴜʀ ʀᴀᴅɪᴏ ɪɴ ᴠᴄ ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴠᴄ ᴀɴᴅ ᴇɴᴊᴏʏ</blockquote>"
         )
         language = await get_lang(callback_query.message.chat.id)
         _ = get_string(language)
@@ -123,5 +123,7 @@ async def play_radio(client, callback_query):
 
 __MODULE__ = "Radio"
 __HELP__ = """
-/radio - ᴛᴏ ᴘʟᴀʏ ʀᴀᴅɪᴏ ɪɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ.
+<blockquote><n>Radio Help</n>
+<u>/radio</u>
+ᴛᴏ ᴘʟᴀʏ ʀᴀᴅɪᴏ ɪɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ.</blockquote>
 """
