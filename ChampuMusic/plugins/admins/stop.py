@@ -130,8 +130,8 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
             )
 
             # Construct message
-            left_message = (
-                <blockquote expandable>f"╔══❰#𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱══❍⊱❁۪۪\n║\n"
+            left_message = (<blockquote expandable>
+                "╔══❰#𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱══❍⊱❁۪۪\n║\n"
                 f"║┣⪼ **𝐂ʜᴀᴛ »** {title}\n║\n"
                 f"║┣⪼ **𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ »** {userbot.id}\n║\n"
                 f"║┣⪼ **𝐍ᴀᴍᴇ »** @{userbot.username}\n║\n"
@@ -187,8 +187,8 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             and member.old_chat_member.status not in {"banned", "left", "restricted"}
             and member.old_chat_member
         ):
-            left_message = (
-                <blockquote expandable>f"Assistant Has Left This Chat**\n\n"
+            left_message = (<blockquote expandable>
+                f"Assistant Has Left This Chat**\n\n"
                 f"Id: `{userbot.id}`\n"
                 f"Name: @{userbot.username}\n\n"
                 f"Invite Assistant By: /userbotjoin"</blockquote>
@@ -204,8 +204,8 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             await set_loop(chat_id, 0)
             await asyncio.sleep(10)
     except UserNotParticipant:
-        left_message = (
-            <blockquote expandable>f"**Assistant Has Left This Chat**\n\n"
+        left_message = (<blockquote expandable>
+            f"**Assistant Has Left This Chat**\n\n"
             f"**Id:** `{userbot.id}`\n"
             f"**Name:** @{userbot.username}\n\n"
             f"**Invite Assistant By: /userbotjoin**"</blockquote>
