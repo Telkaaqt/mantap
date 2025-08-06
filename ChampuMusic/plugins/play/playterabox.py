@@ -17,13 +17,13 @@ async def play_terabox(client, message: Message):
 
     # Validate the Terabox link
     if not await terabox_api.valid(link):
-        await message.reply_text("Invalid Terabox link provided.")
+        await message.reply_text("<blockquote>Invalid Terabox link provided.</blockquote>")
         return
 
     # Fetch video details
     track_details, vidid = await terabox_api.track(link)
     if not track_details:
-        await message.reply_text("Failed to fetch video details.")
+        await message.reply_text("<blockquote>Failed to fetch video details.</blockquote>")
         return
 
 
@@ -47,7 +47,7 @@ async def play_terabox(client, message: Message):
             user_id,
             "video"  # Assuming it's a video
         )
-        await message.reply_text(f"Added to queue: {title}")
+        await message.reply_text(f"<blockquote>Added to queue: {title}</blockquote>")
     else:
         # If no active chat, join and play the video
         await Champu.join_call(chat_id, original_chat_id, link)  # Adjust if needed
@@ -62,4 +62,4 @@ async def play_terabox(client, message: Message):
             user_id,
             "video"
         )
-        await message.reply_text(f"Now playing: {title}")
+        await message.reply_text(f"<blockquote>Now playing: {title}</blockquote>")
