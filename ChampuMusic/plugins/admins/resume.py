@@ -35,14 +35,18 @@ async def resume_com(cli, message: Message, _, chat_id):
 
 __MODULE__ = "Resume"
 __HELP__ = """
-**Resume**
+<blockquote expandable><n>**Resume**</n>
 
 This module allows administrators to resume playback of the currently paused track.
 
-Commands:
-- /resume: Resumes playback of the currently paused track for group.
-- /cresume: Resumes playback of the currently paused track for channel.
+<n>Commands:</n>
 
-Note:
-- Only administrators can use these commands.
+<u>/resume</u>
+Resumes playback of the currently paused track for group.
+
+<u>/cresume</u>
+Resumes playback of the currently paused track for channel.
+
+<n>Note:</n>
+Only administrators can use these commands.</blockquote>
 """
