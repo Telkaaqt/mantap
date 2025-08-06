@@ -58,7 +58,7 @@ admin_21 : "<blockquote>Nᴏᴛʜɪɴɢ ɪɴsɪᴅᴇ ǫᴜᴇᴜᴇ ᴛᴏ sʜ�
 admin_22 : "<blockquote>Fᴀɪʟᴇᴅ ᴛᴏ sʜᴜғғʟᴇ.\n\nCʜᴇᴄᴋ ǫᴜᴇᴜᴇ : /queue</blockquote>"
 admin_23 : "<blockquote expandable><n>Qᴜᴇᴜᴇ Sʜᴜғғʟᴇᴅ ʙʏ</n> {0}\n\nCʜᴇᴄᴋ sʜᴜғғʟᴇᴅ ǫᴜᴇᴜᴇ : /queue<blockquote>"
 admin_24 : "<blockquote expandable>Usᴀɢᴇ:\n/loop [enable/disable] ᴏʀ [Nᴜᴍʙᴇʀ ʙᴇᴛᴡᴇᴇɴ 𝟷-𝟷𝟶]\n\nExᴀᴍᴘʟᴇ: `/loop 5`</blockquote>"
-admin_25 : "<blockquote expandable><n>Lᴏᴏᴘ ᴇɴᴀʙʟᴇᴅ ʙʏ {0} ғᴏʀ {1} ᴛɪᴍᴇs.</n> Bᴏᴛ ᴡɪʟʟ ɴᴏᴡ ʀᴇᴘᴇᴀᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴘʟᴀʏɪɴɢ ᴍᴜsɪᴄ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ғᴏʀ {1} ᴛɪᴍᴇs<blockquote>"
+admin_25 : "<blockquote expandable>Lᴏᴏᴘ ᴇɴᴀʙʟᴇᴅ ʙʏ {0} ғᴏʀ {1} ᴛɪᴍᴇs. Bᴏᴛ ᴡɪʟʟ ɴᴏᴡ ʀᴇᴘᴇᴀᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴘʟᴀʏɪɴɢ ᴍᴜsɪᴄ ᴏɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ғᴏʀ {1} ᴛɪᴍᴇs</blockquote>"
 admin_26 : "<blockquote>Pʟᴇᴀsᴇ ᴜsᴇ ɴᴜᴍʙᴇʀs ʙᴇᴛᴡᴇᴇɴ 𝟷-𝟷𝟶 ғᴏʀ ʟᴏᴏᴘ ᴘʟᴀʏ</blockquote>"
 admin_27 : "<blockquote>Lᴏᴏᴘ Pʟᴀʏ ʜᴀs ʙᴇᴇɴ ᴅɪsᴀʙʟᴇᴅ</blockquote>"
 admin_28 : "<blockquote>Usᴀɢᴇ:\n/seek ᴏʀ /seekback [Dᴜʀᴀᴛɪᴏɴ ɪɴ sᴇᴄᴏɴᴅs]</blockquote>"
