@@ -37,8 +37,8 @@ async def stop_music(cli, message: Message):
     user_id = message.from_user.id
     try:
         member = await client.get_chat_member(f"@{CHANNEL_USERNAME}", user_id)
-    if member.status in ("left", "kicked"):
-        raise Exception()
+        if member.status in ("left", "kicked"):
+            raise Exception()
     except:
         return await message.reply_text(
             "🚫 Silakan join channel terlebih dahulu untuk menggunakan perintah ini.",
