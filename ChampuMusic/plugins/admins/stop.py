@@ -186,10 +186,10 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             and member.old_chat_member
         ):
             left_message = (
-                f"<blockquote expandable>Assistant Has Left This Chat\n\n
+                f"""<blockquote expandable>Assistant Has Left This Chat\n\n
                   Id: `{userbot.id}`\n
                   Name: @{userbot.username}\n\n
-                  Invite Assistant By: /userbotjoin</blockquote>"
+                  Invite Assistant By: /userbotjoin</blockquote>"""
             )
             await app.send_photo(
                 chat_id,
@@ -204,10 +204,10 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             await asyncio.sleep(10)
     except UserNotParticipant:
         left_message = (
-            f"<blockquote expandable>Assistant Has Left This Chat\n\n
+            f"""<blockquote expandable>Assistant Has Left This Chat\n\n
               Id: `{userbot.id}`\n
               Name: @{userbot.username}\n\n
-              Invite Assistant By: /userbotjoin</blockquote>"
+              Invite Assistant By: /userbotjoin</blockquote>"""
         )
         await app.send_photo(
             chat_id,
