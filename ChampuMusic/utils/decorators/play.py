@@ -40,8 +40,8 @@ def PlayWrapper(command):
                 [
                     [
                         InlineKeyboardButton(
-                            text="<blockquote>ʜᴏᴡ ᴛᴏ ғɪx ?</blockquote>",
-                            callback_data="<blockquote>AnonymousAdmin</blockquote>",
+                            text="ʜᴏᴡ ᴛᴏ ғɪx ?",
+                            callback_data="AnonymousAdmin",
                         ),
                     ]
                 ]
