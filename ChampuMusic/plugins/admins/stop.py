@@ -157,6 +157,7 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
                 photo=random.choice(photo),
                 caption=left_message,
                 reply_markup=keyboard,
+                parse_mode="Markdown"
             )
             # Perform actions like stopping streams or loops
             await Champu.st_stream(chat_id)
@@ -198,6 +199,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
                 photo=random.choice(photo),
                 caption=left_message,
                 reply_markup=keyboard,
+                parse_mode="Markdown"
             )
 
             await Champu.st_stream(chat_id)
@@ -215,6 +217,7 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             photo=random.choice(photo),
             caption=left_message,
             reply_markup=keyboard,
+            parse_mode="Markdown"
         )
         await Champu.st_stream(chat_id)
         await set_loop(chat_id, 0)
