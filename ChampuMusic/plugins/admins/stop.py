@@ -131,12 +131,11 @@ async def assistant_banned(client: app, member: ChatMemberUpdated):
 
             # Construct message
             left_message = (
-                f"╔══❰#𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱══❍⊱❁۪۪\n║\n"
-                f"║┣⪼ **𝐂ʜᴀᴛ »** {title}\n║\n"
-                f"║┣⪼ **𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ »** {userbot.id}\n║\n"
-                f"║┣⪼ **𝐍ᴀᴍᴇ »** @{userbot.username}\n║\n"
-                f"║┣⪼ **𝐁ᴀɴ 𝐁ʏ »** {remove_by}\n"
-                f"╚══════════════════❍⊱❁"
+                f"<blockquote expandable>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱\n║\n
+                𝐂ʜᴀᴛ » {title}\n║\n
+                𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ » {userbot.id}\n║\n
+                𝐍ᴀᴍᴇ » @{userbot.username}\n║\n
+                𝐁ᴀɴ 𝐁ʏ » {remove_by}\n</blockquote>"
             )
 
             # Create keyboard for unban button
@@ -189,17 +188,17 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             and member.old_chat_member
         ):
             left_message = (
-                f">Assistant Has Left This Chat\n\n"
-                f">Id: `{userbot.id}`\n"
-                f">Name: @{userbot.username}\n\n"
-                f">Invite Assistant By: /userbotjoin"
+                f"<blockquote expandable>Assistant Has Left This Chat\n\n
+                  Id: `{userbot.id}`\n
+                  Name: @{userbot.username}\n\n
+                  Invite Assistant By: /userbotjoin</blockquote>"
             )
             await app.send_photo(
                 chat_id,
                 photo=random.choice(photo),
                 caption=left_message,
                 reply_markup=keyboard,
-                parse_mode="Markdown"
+                
             )
 
             await Champu.st_stream(chat_id)
@@ -207,17 +206,17 @@ async def assistant_left(client: app, member: ChatMemberUpdated):
             await asyncio.sleep(10)
     except UserNotParticipant:
         left_message = (
-            f">Assistant Has Left This Chat\n\n"
-            f">Id: `{userbot.id}`\n"
-            f">Name: @{userbot.username}\n\n"
-            f">Invite Assistant By: /userbotjoin"
+            f"<blockquote expandable>Assistant Has Left This Chat\n\n
+              Id: `{userbot.id}`\n
+              Name: @{userbot.username}\n\n
+              Invite Assistant By: /userbotjoin</blockquote>"
         )
         await app.send_photo(
             chat_id,
             photo=random.choice(photo),
             caption=left_message,
             reply_markup=keyboard,
-            parse_mode="Markdown"
+            
         )
         await Champu.st_stream(chat_id)
         await set_loop(chat_id, 0)
