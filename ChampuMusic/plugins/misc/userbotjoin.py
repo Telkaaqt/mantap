@@ -19,7 +19,7 @@ async def join_group(client, message):
     chat_id = message.chat.id
     userbot = await get_assistant(message.chat.id)
     userbot_id = userbot.id
-    done = await message.reply("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...")
+    done = await message.reply("<blockquote>**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...</blockquote>")
     await asyncio.sleep(1)
     # Get chat member object
     chat_member = await app.get_chat_member(chat_id, app.id)
@@ -31,7 +31,7 @@ async def join_group(client, message):
     ):
         try:
             await userbot.join_chat(message.chat.username)
-            await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**")
+            await done.edit_text("<blockquote>**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**</blockquote>")
 
         except InviteRequestSent:
             try:
@@ -39,13 +39,13 @@ async def join_group(client, message):
             except Exception:
                 pass
         except Exception as e:
-            await done.edit_text("**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ᴜɴʙᴀɴ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ!**")
+            await done.edit_text("<blockquote>**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ᴜɴʙᴀɴ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ!**</blockquote>")
 
     # Condition 2: Group username is present, bot is admin, and Userbot is not banned
     if message.chat.username and chat_member.status == ChatMemberStatus.ADMINISTRATOR:
         try:
             await userbot.join_chat(message.chat.username)
-            await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**")
+            await done.edit_text("<blockquote>**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ.**</blockquote>")
         except InviteRequestSent:
             try:
                 await app.approve_chat_join_request(chat_id, userbot_id)
@@ -63,10 +63,10 @@ async def join_group(client, message):
         ]:
             try:
                 await app.unban_chat_member(chat_id, userbot.id)
-                await done.edit_text("**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴɪɴɢ...**")
+                await done.edit_text("<blockquote>**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴɪɴɢ...**</blockquote>")
                 await userbot.join_chat(message.chat.username)
                 await done.edit_text(
-                    "**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ʙᴜᴛ ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ ✅**"
+                    "<blockquote>**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ʙᴜᴛ ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ ✅**</blockquote>"
                 )
             except InviteRequestSent:
                 try:
@@ -75,7 +75,7 @@ async def join_group(client, message):
                     pass
             except Exception as e:
                 await done.edit_text(
-                    "**ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ, ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴀɴᴅ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ /userbotjoin**"
+                    "<blockquote expandable>**ғᴀɪʟᴇᴅ ᴛᴏ ᴊᴏɪɴ, ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴀɴᴅ ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ /userbotjoin**</blockquote>"
                 )
         return
 
@@ -84,7 +84,7 @@ async def join_group(client, message):
         not message.chat.username
         and not chat_member.status == ChatMemberStatus.ADMINISTRATOR
     ):
-        await done.edit_text("**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ.**")
+        await done.edit_text("<blockquote>**ɪ ɴᴇᴇᴅ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ.**</blockquote>")
 
     # Condition 5: Group username is not present/group is private, bot is admin
     if (
@@ -98,17 +98,17 @@ async def join_group(client, message):
                     ChatMemberStatus.BANNED,
                     ChatMemberStatus.RESTRICTED,
                 ]:
-                    await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ᴊᴏɪɴᴇᴅ.**")
+                    await done.edit_text("<blockquote>**✅ ᴀssɪsᴛᴀɴᴛ ᴀʟʀᴇᴀᴅʏ ᴊᴏɪɴᴇᴅ.**</blockquote>")
                     return
             except Exception as e:
-                await done.edit_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**.")
-                await done.edit_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...")
+                await done.edit_text("<blockquote>**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**.</blockquote>")
+                await done.edit_text("<blockquote>**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ɪɴᴠɪᴛɪɴɢ ᴀssɪsᴛᴀɴᴛ**...</blockquote>")
                 invite_link = await app.create_chat_invite_link(
                     chat_id, expire_date=None
                 )
                 await asyncio.sleep(2)
                 await userbot.join_chat(invite_link.invite_link)
-                await done.edit_text("**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**")
+                await done.edit_text("<blockquote>**✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.**</blockquote>")
         except InviteRequestSent:
             try:
                 await app.approve_chat_join_request(chat_id, userbot_id)
@@ -116,7 +116,7 @@ async def join_group(client, message):
                 pass
         except Exception as e:
             await done.edit_text(
-                f"**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʜᴀs ɴᴏᴛ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}"
+                f"<blockquote expandable>**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʜᴀs ɴᴏᴛ ᴊᴏɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ɪɴᴠɪᴛᴇ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ɪɴᴠɪᴛᴇ ᴜsᴇʀ ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴀᴅᴍɪɴ ᴘᴏᴡᴇʀ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}</blockquote>"
             )
 
     # Condition 6: Group username is not present/group is private, bot is admin and Userbot is banned
@@ -132,7 +132,7 @@ async def join_group(client, message):
             try:
                 await app.unban_chat_member(chat_id, userbot.id)
                 await done.edit_text(
-                    "**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴᴇᴅ**\n**ᴛʏᴘᴇ ᴀɢᴀɪɴ:- /userbotjoin.**"
+                    "<blockquote>**ᴀssɪsᴛᴀɴᴛ ɪs ᴜɴʙᴀɴɴᴇᴅ**\n**ᴛʏᴘᴇ ᴀɢᴀɪɴ:- /userbotjoin.**</blockquote>"
                 )
                 invite_link = await app.create_chat_invite_link(
                     chat_id, expire_date=None
@@ -140,7 +140,7 @@ async def join_group(client, message):
                 await asyncio.sleep(2)
                 await userbot.join_chat(invite_link.invite_link)
                 await done.edit_text(
-                    "**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ✅**"
+                    "<blockquote>**ᴀssɪsᴛᴀɴᴛ ᴡᴀs ʙᴀɴɴᴇᴅ, ɴᴏᴡ ᴜɴʙᴀɴɴᴇᴅ, ᴀɴᴅ ᴊᴏɪɴᴇᴅ ᴄʜᴀᴛ✅**</blockquote>"
                 )
             except InviteRequestSent:
                 try:
@@ -150,7 +150,7 @@ async def join_group(client, message):
 
             except Exception as e:
                 await done.edit_text(
-                    f"**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ʙᴀɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}"
+                    f"<blockquote expandable>**➻ ᴀᴄᴛᴜᴀʟʟʏ ɪ ғᴏᴜɴᴅ ᴛʜᴀᴛ ᴍʏ ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴀɴᴅ ɪ ᴀᴍ ɴᴏᴛ ᴀʙʟᴇ ᴛᴏ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ʙᴇᴄᴀᴜsᴇ [ ɪ ᴅᴏɴᴛ ʜᴀᴠᴇ  ʙᴀɴ ᴘᴏᴡᴇʀ ] sᴏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ʙᴀɴ ᴘᴏᴡᴇʀ ᴏʀ ᴜɴʙᴀɴ ᴍʏ ᴀssɪsᴛᴀɴᴛ ᴍᴀɴᴜᴀʟʟʏ ᴛʜᴇɴ ᴛʀʏ ᴀɢᴀɪɴ ʙʏ- /userbotjoin.**\n\n**➥ ɪᴅ »** @{userbot.username}</blockquote>"
                 )
         return
 
@@ -161,7 +161,7 @@ async def leave_one(client, message):
         userbot = await get_assistant(message.chat.id)
         await userbot.leave_chat(message.chat.id)
         await app.send_message(
-            message.chat.id, "**✅ ᴜsᴇʀʙᴏᴛ sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴛʜɪs Chat.**"
+            message.chat.id, "<blockquote>**✅ ᴜsᴇʀʙᴏᴛ sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴛʜɪs Chat.**</blockquote>"
         )
     except Exception as e:
         print(e)
@@ -174,7 +174,7 @@ async def leave_all(client, message):
 
     left = 0
     failed = 0
-    lol = await message.reply("🔄 **ᴜsᴇʀʙᴏᴛ** ʟᴇᴀᴠɪɴɢ ᴀʟʟ ᴄʜᴀᴛs !")
+    lol = await message.reply("<blockquote>**ᴜsᴇʀʙᴏᴛ** ʟᴇᴀᴠɪɴɢ ᴀʟʟ ᴄʜᴀᴛs !</blockquote>")
     try:
         userbot = await get_assistant(message.chat.id)
         async for dialog in userbot.get_dialogs():
@@ -184,23 +184,29 @@ async def leave_all(client, message):
                 await userbot.leave_chat(dialog.chat.id)
                 left += 1
                 await lol.edit(
-                    f"**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴀʟʟ ɢʀᴏᴜᴘ...**\n\n**ʟᴇғᴛ:** {left} ᴄʜᴀᴛs.\n**ғᴀɪʟᴇᴅ:** {failed} ᴄʜᴀᴛs."
+                    f"<blockquote expandable>**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴀʟʟ ɢʀᴏᴜᴘ...**\n\n**ʟᴇғᴛ:** {left} ᴄʜᴀᴛs.\n**ғᴀɪʟᴇᴅ:** {failed} ᴄʜᴀᴛs.</blockquote>"
                 )
             except BaseException:
                 failed += 1
                 await lol.edit(
-                    f"**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ...**\n\n**ʟᴇғᴛ:** {left} chats.\n**ғᴀɪʟᴇᴅ:** {failed} chats."
+                    f"<blockquote expandable>**ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ...**\n\n**ʟᴇғᴛ:** {left} chats.\n**ғᴀɪʟᴇᴅ:** {failed} chats.</blockquote>"
                 )
             await asyncio.sleep(3)
     finally:
         await app.send_message(
             message.chat.id,
-            f"**✅ ʟᴇғᴛ ғʀᴏᴍ:* {left} chats.\n**❌ ғᴀɪʟᴇᴅ ɪɴ:** {failed} chats.",
+            f"<blockquote expandable>**✅ ʟᴇғᴛ ғʀᴏᴍ:* {left} chats.\n**❌ ғᴀɪʟᴇᴅ ɪɴ:** {failed} chats.</blockquote>",
         )
 
 
 __MODULES__ = "Userbotjoin"
 __HELP__ = """
-/ᴜsᴇʀʙᴏᴛᴊᴏɪɴ: Iɴᴠɪᴛᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴛᴏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ.
-/ᴜsᴇʀʙᴏᴛᴇᴀᴠᴇ: Mᴀᴋᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴇᴀᴠᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ.
-/ᴇᴀᴠᴇᴀ: Mᴀᴋᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴇᴀᴠᴇ ᴀ ɢʀᴏᴜᴘs ᴡʜᴇʀᴇ ɪᴛ ɪs ᴘʀᴇsᴇɴᴛ (ᴀᴄᴄᴇssɪʙᴇ ᴏɴʏ ᴛᴏ SUDOERS)."""
+<blockquote expandable>
+<u>/ᴜsᴇʀʙᴏᴛᴊᴏɪɴ</u>
+Iɴᴠɪᴛᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴛᴏ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ.
+
+<u>/ᴜsᴇʀʙᴏᴛᴇᴀᴠᴇ</u>
+Mᴀᴋᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴇᴀᴠᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ.
+
+<u>/ᴇᴀᴠᴇᴀ</u>
+Mᴀᴋᴇs ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴇᴀᴠᴇ ᴀ ɢʀᴏᴜᴘs ᴡʜᴇʀᴇ ɪᴛ ɪs ᴘʀᴇsᴇɴᴛ (ᴀᴄᴄᴇssɪʙᴇ ᴏɴʏ ᴛᴏ SUDOERS).</blockquote>"""
