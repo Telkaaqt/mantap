@@ -1,7 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS
+from config import BANNED_USERS, CHANNEL_USERNAME
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from strings import get_command
 from ChampuMusic import YouTube, app
 from ChampuMusic.core.call import Champu
@@ -13,6 +14,7 @@ SEEK_COMMAND = get_command("SEEK_COMMAND")
 
 
 @app.on_message(filters.command(SEEK_COMMAND) & filters.group & ~BANNED_USERS)
+@require_fsub
 @AdminRightsCheck
 async def seek_comm(cli, message: Message, _, chat_id):
     if len(message.command) == 1:
