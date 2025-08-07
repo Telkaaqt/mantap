@@ -116,14 +116,14 @@ setting_14 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\nWʜᴇɴ ᴀᴄᴛ
 setting_15 : "<blockquote expandable>Fᴀɪʟᴇᴅ ᴛᴏ ʀᴇsᴏʟᴠᴇ ᴘᴇᴇʀ, Mᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ʙᴏᴛ ɪɴ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴏᴍᴏᴛᴇᴅ ɪᴛ ᴀs ᴀᴅᴍɪɴ.\n\nTʀʏ sᴇᴛᴛɪɴɢ /channelplay ᴀɢᴀɪɴ..</blockquote>"
 setting_16 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\nWʜᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ, Bᴏᴛ ᴡɪʟʟ sᴜɢɢᴇsᴛ ʏᴏᴜʀ ᴄʜᴀᴛ ɪɴ ᴇᴠᴇʀʏ 1-2 ʜᴏᴜʀ ᴀʙᴏᴜᴛ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs (Hᴏᴡ ᴛᴏ ᴜsᴇ ᴛʜᴇᴍ, ᴡʜɪᴄʜ ᴀʀᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴀɴᴅ ᴍᴀɴʏ ᴏᴛʜᴇʀ ᴛʜɪɴɢs) ʀᴀɴᴅᴏᴍʟʏ.</blockquote>"
 
-set_cb_1 : "<blockquote>ɢᴇᴛᴛɪɴɢ ᴀᴜᴅɪᴏ ǫᴜᴀʟɪᴛʏ ᴘᴀɴᴇʟ...</blockquote>"
-set_cb_2 : "<blockquote>ɢᴇᴛᴛɪɴɢ ᴠɪᴅᴇᴏ ǫᴜᴀʟɪᴛʏ ᴘᴀɴᴇʟ...</blockquote>"
-set_cb_3 : "<blockquote>ɢᴇᴛᴛɪɴɢ ᴀᴜᴛʜ ᴜsᴇʀs ᴘᴀɴᴇʟ...</blockquote>"
-set_cb_4 : "<blockquote>ɢᴇᴛᴛɪɴɢ ᴘʟᴀʏ ᴍᴏᴅᴇ ᴘᴀɴᴇʟ...</blockquote>"
-set_cb_5 : "<blockquote>ɢᴇᴛᴛɪɴɢ ᴄʟᴇᴀɴ ᴍᴏᴅᴇ ᴘᴀɴᴇʟ...</blockquote>"
-set_cb_6 : "<blockquote>sᴇᴛᴛɪɴɢ ᴜᴘ ᴄʜᴀɴɢᴇs.</blockquote>"
-set_cb_7 : "<blockquote>ғᴇᴛᴄʜɪɴɢ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ʟɪsᴛ....</blockquote>"
-set_cb_8 : "<blockquote>ɢᴇᴛᴛɪɴɢ ʙᴀᴄᴋ..</blockquote>"
+set_cb_1 : "ɢᴇᴛᴛɪɴɢ ᴀᴜᴅɪᴏ ǫᴜᴀʟɪᴛʏ ᴘᴀɴᴇʟ"
+set_cb_2 : "ɢᴇᴛᴛɪɴɢ ᴠɪᴅᴇᴏ ǫᴜᴀʟɪᴛʏ ᴘᴀɴᴇʟ"
+set_cb_3 : "ɢᴇᴛᴛɪɴɢ ᴀᴜᴛʜ ᴜsᴇʀs ᴘᴀɴᴇʟ"
+set_cb_4 : "ɢᴇᴛᴛɪɴɢ ᴘʟᴀʏ ᴍᴏᴅᴇ ᴘᴀɴᴇʟ"
+set_cb_5 : "ɢᴇᴛᴛɪɴɢ ᴄʟᴇᴀɴ ᴍᴏᴅᴇ ᴘᴀɴᴇʟ"
+set_cb_6 : "sᴇᴛᴛɪɴɢ ᴜᴘ ᴄʜᴀɴɢᴇs"
+set_cb_7 : "ғᴇᴛᴄʜɪɴɢ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ʟɪsᴛ"
+set_cb_8 : "ɢᴇᴛᴛɪɴɢ ʙᴀᴄᴋ"
 
  # Misc
 ustats_1 : "<blockquote>ɴᴏ ᴜsᴇʀ sᴛᴀᴛs ꜰᴏᴜɴᴅ.</blockquote>"
@@ -144,8 +144,8 @@ gstats_11 : "<blockquote expandable>ɢᴇɴᴇʀᴀʟ sᴛᴀᴛs ᴏғ {0}\ns�
 # Play 
 
 #Play Callback 
-playcb_1 : "<blockquote>ᴛʜɪs ɪs ɴᴏᴛ ꜰᴏʀ ʏᴏᴜ! sᴇᴀʀᴄʜ ʏᴏᴜ ᴏᴡɴ.</blockquote>"
-playcb_2 : "<blockquote>ɢᴇᴛᴛɪɴɢ ɴᴇxᴛ ʀᴇsᴜʟᴛ...</blockquote>"
+playcb_1 : "ᴛʜɪs ɪs ɴᴏᴛ ꜰᴏʀ ʏᴏᴜ! sᴇᴀʀᴄʜ ʏᴏᴜ ᴏᴡɴ"
+playcb_2 : "ɢᴇᴛᴛɪɴɢ ɴᴇxᴛ ʀᴇsᴜʟᴛ"
 
 # Channel Play
 cplay_1 : "<blockquote expandable>ʏᴏᴜ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ɪɴ ᴄʜᴀɴɴᴇʟs ꜰʀᴏᴍ ᴛʜɪs ᴄʜᴀᴛ [{0}] ᴛᴏ ᴀɴʏ ᴄʜᴀɴɴᴇʟ ᴏʀ ʏᴏᴜʀ ᴄʜᴀᴛ's ʟɪɴᴋᴇᴅ ᴄʜᴀɴɴᴇʟ.\n\n<n>ꜰᴏʀ ʟɪɴᴋᴇᴅ ᴄʜᴀɴɴᴇʟ:</n>\n/{1} ʟɪɴᴋᴇᴅ\n\n<n>ꜰᴏʀ ᴀɴʏ ᴏᴛʜᴇʀ ᴄʜᴀɴɴᴇʟ:</n>\n/{1} [ᴄʜᴀɴɴᴇʟ ɪᴅ]</blockquote>"
