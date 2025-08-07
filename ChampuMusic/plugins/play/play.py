@@ -9,6 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from config import BANNED_USERS, CHANNEL_USERNAME, LOGGER_ID, OWNER_ID, lyrical
 from ChampuMusic import LOGGER, Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, EMOJIS
 from ChampuMusic.core.call import Champu
@@ -60,22 +61,7 @@ async def play_commnd(
     userbot_id = userbot.id
     user_id = message.from_user.id
     current_time = time()
-    last_message_time = user_last_message_time.get(user_id, 0)
-# Ganti 'CHANNEL_USERNAME' dengan @ atau ID dari channel FSub kamu 
-
-try:
-    member = await client.get_chat_member(CHANNEL_USERNAME, user_id)
-    if member.status in ("left", "kicked"):
-        raise Exception()
-except:
-    return await message.reply_text(
-        "<b>Untuk menggunakan bot ini, silakan join channel terlebih dahulu.</b>",
-        reply_markup=InlineKeyboardMarkup(
-            [[
-                InlineKeyboardButton("Join Channel", url=f"https://t.me/{CHANNEL_USERNAME.strip('@')}")
-            ]]
-        )
-    )
+    last_message_time =
 
     # Spam check logic
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
