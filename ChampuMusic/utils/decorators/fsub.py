@@ -10,9 +10,9 @@ def require_fsub(func):
                 raise Exception()
         except:
             return await message.reply_text(
-                "🚫 Untuk menggunakan bot ini, silakan join channel terlebih dahulu.",
+                "<blockquote>ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ɪɴɪ, sɪʟᴀᴋᴀɴ Jᴏɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ.</blockquote>",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("📢 Join Channel", url=f"https://t.me/{CHANNEL_USERNAME}")]]
+                    [[InlineKeyboardButton("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{CHANNEL_USERNAME}")]]
                 )
             )
         return await func(client, message, *args, **kwargs)
