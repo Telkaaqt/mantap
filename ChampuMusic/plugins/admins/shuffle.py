@@ -3,7 +3,8 @@ import random
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS
+from config import BANNED_USERS, CHANNEL_USERNAME
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from strings import get_command
 from ChampuMusic import app
 from ChampuMusic.misc import db
@@ -14,6 +15,7 @@ SHUFFLE_COMMAND = get_command("SHUFFLE_COMMAND")
 
 
 @app.on_message(filters.command(SHUFFLE_COMMAND) & filters.group & ~BANNED_USERS)
+@require_fsub
 @AdminRightsCheck
 async def admins(Client, message: Message, _, chat_id):
     if not len(message.command) == 1:
