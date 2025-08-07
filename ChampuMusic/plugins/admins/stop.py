@@ -34,6 +34,7 @@ from ChampuMusic.utils.database import (
 @app.on_message(
     filters.command(["stop", "end", "cstop", "cend"]) & filters.group & ~BANNED_USERS
 )
+@require_fsub
 async def stop_music(cli, message: Message):
     if await is_maintenance() is False:
         if message.from_user.id not in SUDOERS:
