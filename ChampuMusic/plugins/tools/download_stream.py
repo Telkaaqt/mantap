@@ -36,7 +36,7 @@ async def download_video(client, CallbackQuery):
     if current_time - last_Query_time < SPAM_WINDOW_SECONDS:
         # If the limit is exceeded, send a response and return
         await CallbackQuery.answer(
-            "➻ ʏᴏᴜ ʜᴀᴠᴇ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʏᴏᴜʀ ᴠɪᴅᴇᴏ (ᴄʜᴇᴄᴋ ᴍʏ ᴅᴍ/ᴘᴍ).\n\n➥ ɴᴇxᴛ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴀғᴛᴇʀ 30 sᴇᴄᴏɴᴅs.",
+            "<blockquote expandable>➻ ʏᴏᴜ ʜᴀᴠᴇ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʏᴏᴜʀ ᴠɪᴅᴇᴏ (ᴄʜᴇᴄᴋ ᴍʏ ᴅᴍ/ᴘᴍ).\n\n➥ ɴᴇxᴛ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴀғᴛᴇʀ 30 sᴇᴄᴏɴᴅs.</blockquote>",
             show_alert=True,
         )
         return
@@ -50,14 +50,14 @@ async def download_video(client, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     user_name = CallbackQuery.from_user.first_name
     chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-    await CallbackQuery.answer("ᴏᴋ sɪʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...", show_alert=True)
+    await CallbackQuery.answer("<blockquote>ᴏᴋ sɪʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...</blockquote>", show_alert=True)
     pablo = await client.send_message(
         CallbackQuery.message.chat.id,
-        f"**ʜᴇʏ {chutiya} ᴅᴏᴡɴʟᴏᴅɪɴɢ ʏᴏᴜʀ ᴠɪᴅᴇᴏ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**",
+        f"<blockquote>ʜᴇʏ {chutiya} ᴅᴏᴡɴʟᴏᴅɪɴɢ ʏᴏᴜʀ ᴠɪᴅᴇᴏ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...</blockquote>",
     )
     if not videoid:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**"
+            f"<blockquote>**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**</blockquote>"
         )
         return
 
@@ -68,7 +68,7 @@ async def download_video(client, CallbackQuery):
     mio = mi.get("search_result", [])
     if not mio:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**"
+            f"<blockquote>**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**</blockquote>"
         )
         return
 
@@ -99,12 +99,12 @@ async def download_video(client, CallbackQuery):
 
     except Exception as e:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ sᴏɴɢ.** \n**ᴇʀʀᴏʀ:** `{str(e)}`"
+            f"<blockquote>**ʜᴇʏ {chutiya} ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ sᴏɴɢ.** \n**ᴇʀʀᴏʀ:** `{str(e)}`</blockquote>"
         )
         return
 
     file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"❄ **ᴛɪᴛʟᴇ :** [{thum}]({mo})\n\n💫 **ᴄʜᴀɴɴᴇʟ :** {thums}\n\n🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {chutiya}"
+    capy = f"<blockquote expandable> **ᴛɪᴛʟᴇ :** [{thum}]({mo})\n\n **ᴄʜᴀɴɴᴇʟ :** {thums}\n\n **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {chutiya}</blockquote>"
     try:
         await client.send_video(
             CallbackQuery.from_user.id,
@@ -116,13 +116,13 @@ async def download_video(client, CallbackQuery):
             supports_streaming=True,
             progress_args=(
                 pablo,
-                f"**{chutiya} ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\n**ᴜᴘʟᴏᴀᴅɪɴɢ ᴠɪᴅᴇᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ...💫**",
+                f"<blockquote>**{chutiya} ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\n**ᴜᴘʟᴏᴀᴅɪɴɢ ᴠɪᴅᴇᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ...**</blockquote>",
                 file_stark,
             ),
         )
         await client.send_message(
             CallbackQuery.message.chat.id,
-            f"**ʜᴇʏ** {chutiya}\n\n**✅ sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.**\n**➻ ᴠɪᴅᴇᴏ sᴇɴᴛ ɪɴ ʏᴏᴜʀ ᴘᴍ/ᴅᴍ.**\n**➥ ᴄʜᴇᴄᴋ ʜᴇʀᴇ » [ʙᴏᴛ ᴘᴍ/ᴅᴍ](tg://openmessage?user_id={app.id})**🤗",
+            f"<blockquote expandable>**ʜᴇʏ** {chutiya}\n\n** sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.**\n**➻ ᴠɪᴅᴇᴏ sᴇɴᴛ ɪɴ ʏᴏᴜʀ ᴘᴍ/ᴅᴍ.**\n**➥ ᴄʜᴇᴄᴋ ʜᴇʀᴇ » [ʙᴏᴛ ᴘᴍ/ᴅᴍ](tg://openmessage?user_id={app.id})**</blockquote>",
         )
         await pablo.delete()
         for files in (sedlyf, file_stark):
@@ -133,12 +133,12 @@ async def download_video(client, CallbackQuery):
         await pablo.delete()
         return await client.send_message(
             CallbackQuery.message.chat.id,
-            f"**ʜᴇʏ {chutiya} ᴘʟᴇᴀsᴇ ᴜɴʙʟᴏᴄᴋ ᴍᴇ ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴠɪᴅᴇᴏ ʙʏ ᴄʟɪᴄᴋ ʜᴇʀᴇ 👇👇**",
+            f"<blockquote>**ʜᴇʏ {chutiya} ᴘʟᴇᴀsᴇ ᴜɴʙʟᴏᴄᴋ ᴍᴇ ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴠɪᴅᴇᴏ ʙʏ ᴄʟɪᴄᴋ ʜᴇʀᴇ 👇👇**</blockquote>",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            f"👉ᴜɴʙʟᴏᴄᴋ ᴍᴇ🤨",
+                            f"ᴜɴʙʟᴏᴄᴋ ᴍᴇ",
                             url=f"https://t.me/{app.username}?start=info_{videoid}",
                         )
                     ]
@@ -165,7 +165,7 @@ async def download_audio(client, CallbackQuery):
     if current_time - last_Query_time < SPAM_AUDIO_WINDOW_SECONDS:
         # If the limit is exceeded, send a response and return
         await CallbackQuery.answer(
-            "➻ ʏᴏᴜ ʜᴀᴠᴇ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ (ᴄʜᴇᴄᴋ ᴍʏ ᴅᴍ/ᴘᴍ).\n\n➥ ɴᴇxᴛ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴀғᴛᴇʀ 30 sᴇᴄᴏɴᴅs.",
+            "<blockquote expandable>➻ ʏᴏᴜ ʜᴀᴠᴇ ʜᴀᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ (ᴄʜᴇᴄᴋ ᴍʏ ᴅᴍ/ᴘᴍ).\n\n➥ ɴᴇxᴛ sᴏɴɢ ᴅᴏᴡɴʟᴏᴀᴅ ᴀғᴛᴇʀ 30 sᴇᴄᴏɴᴅs.</blockquote>",
             show_alert=True,
         )
         return
@@ -179,14 +179,14 @@ async def download_audio(client, CallbackQuery):
     user_id = CallbackQuery.from_user.id
     user_name = CallbackQuery.from_user.first_name
     chutiya = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
-    await CallbackQuery.answer("ᴏᴋ sɪʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...", show_alert=True)
+    await CallbackQuery.answer("<blockquote>ᴏᴋ sɪʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...</blockquote>", show_alert=True)
     pablo = await client.send_message(
         CallbackQuery.message.chat.id,
-        f"**ʜᴇʏ {chutiya} ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ ᴀᴜᴅɪᴏ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**",
+        f"<blockquote>**ʜᴇʏ {chutiya} ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ ᴀᴜᴅɪᴏ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**</blockquote>",
     )
     if not videoid:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**"
+            f"<blockquote>**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**</blockquote>"
         )
         return
 
@@ -197,7 +197,7 @@ async def download_audio(client, CallbackQuery):
     mio = mi.get("search_result", [])
     if not mio:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**"
+            f"<blockquote>**ʜᴇʏ {chutiya} ʏᴏᴜʀ sᴏɴɢ ɴᴏᴛ ғᴏᴜɴᴅ ᴏɴ ʏᴏᴜᴛᴜʙᴇ. ᴛʀʏ ᴀɢᴀɪɴ...**</blockquote>"
         )
         return
 
@@ -227,12 +227,12 @@ async def download_audio(client, CallbackQuery):
 
     except Exception as e:
         await pablo.edit(
-            f"**ʜᴇʏ {chutiya} ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ.** \n**ᴇʀʀᴏʀ:** `{str(e)}`"
+            f"<blockquote expandable>**ʜᴇʏ {chutiya} ғᴀɪʟᴇᴅ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ.** \n**ᴇʀʀᴏʀ:** `{str(e)}`</blockquote>"
         )
         return
 
     file_stark = f"{ytdl_data['id']}.mp3"  # Adjusted file extension
-    capy = f"❄ **ᴛɪᴛʟᴇ :** [{thum}]({mo})\n\n💫 **ᴄʜᴀɴɴᴇʟ :** {thums}\n\n🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {chutiya}\n\n⏳ **ᴅᴜʀᴀᴛɪᴏɴ :** {int(ytdl_data['duration']) // 60}:{int(ytdl_data['duration']) % 60}"
+    capy = f"<blockquote expandable> **ᴛɪᴛʟᴇ :** [{thum}]({mo})\n\n **ᴄʜᴀɴɴᴇʟ :** {thums}\n\n **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {chutiya}\n\n **ᴅᴜʀᴀᴛɪᴏɴ :** {int(ytdl_data['duration']) // 60}:{int(ytdl_data['duration']) % 60}</blockquote>"
     try:
         await client.send_audio(
             CallbackQuery.from_user.id,
@@ -242,13 +242,13 @@ async def download_audio(client, CallbackQuery):
             caption=capy,
             progress_args=(
                 pablo,
-                f"**{chutiya} ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\n**ᴜᴘʟᴏᴀᴅɪɴɢ ᴀᴜᴅɪᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ...💫**",
+                f"<blockquote>**{chutiya} ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**\n\n**ᴜᴘʟᴏᴀᴅɪɴɢ ᴀᴜᴅɪᴏ ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ...**</blockquote>",
                 file_stark,
             ),
         )
         await client.send_message(
             CallbackQuery.message.chat.id,
-            f"ʜᴇʏ {chutiya}**\n\n✅ sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.**\n**➻ ᴀᴜᴅɪᴏ sᴇɴᴛ ɪɴ ʏᴏᴜʀ ᴘᴍ/ᴅᴍ.**\n**➥ ᴄʜᴇᴄᴋ ʜᴇʀᴇ » [ʙᴏᴛ ᴘᴍ/ᴅᴍ](tg://openmessage?user_id={app.id})**🤗",
+            f"<blockquote expandable>ʜᴇʏ {chutiya}**\n\n sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ.**\n**➻ ᴀᴜᴅɪᴏ sᴇɴᴛ ɪɴ ʏᴏᴜʀ ᴘᴍ/ᴅᴍ.**\n**➥ ᴄʜᴇᴄᴋ ʜᴇʀᴇ » [ʙᴏᴛ ᴘᴍ/ᴅᴍ](tg://openmessage?user_id={app.id})**</blockquote>",
         )
 
         await pablo.delete()
@@ -260,12 +260,12 @@ async def download_audio(client, CallbackQuery):
         await pablo.delete()
         return await client.send_message(
             CallbackQuery.message.chat.id,
-            f"**ʜᴇʏ {chutiya} ᴘʟᴇᴀsᴇ ᴜɴʙʟᴏᴄᴋ ᴍᴇ ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ ʙʏ ᴄʟɪᴄᴋ ʜᴇʀᴇ 👇👇**",
+            f"<blockquote>**ʜᴇʏ {chutiya} ᴘʟᴇᴀsᴇ ᴜɴʙʟᴏᴄᴋ ᴍᴇ ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴀᴜᴅɪᴏ ʙʏ ᴄʟɪᴄᴋ ʜᴇʀᴇ 👇👇**</blockquote>",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            f"👉ᴜɴʙʟᴏᴄᴋ ᴍᴇ🤨",
+                            f"ᴜɴʙʟᴏᴄᴋ ᴍᴇ",
                             url=f"https://t.me/{app.username}?start=info_{videoid}",
                         )
                     ]
