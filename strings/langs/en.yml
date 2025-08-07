@@ -106,7 +106,7 @@ help_2 : "<blockquote>Cᴏɴᴛᴀᴄᴛ ᴍᴇ ɪɴ PM ғᴏʀ ʜᴇʟᴘ.</blo
 setting_1 : "<blockquote expandable>Mᴜsɪᴄ Bᴏᴛ Sᴇᴛᴛɪɴɢs\n\nGʀᴏᴜᴘ: {0}\nGʀᴏᴜᴘ ID: `{1}`\n\nCʜᴏᴏsᴇ ᴛʜᴇ ғᴜɴᴄᴛɪᴏɴ ʙᴜᴛᴛᴏɴs ғʀᴏᴍ ʙᴇʟᴏᴡ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴇᴅɪᴛ ᴏʀ ᴄʜᴀɴɢᴇ.</blockquote>"
 setting_3 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\n1) Dɪʀᴇᴄᴛ: Pʟᴀʏs sᴇᴀʀᴄʜ ᴏ̨ᴜᴇʀɪᴇs ᴅɪʀᴇᴄᴛʟʏ. Usᴇ -ᴠ ᴛᴏ ᴘʟᴀʏ ᴠɪᴅᴇᴏs ɪɴ ᴅɪʀᴇᴄᴛ ᴍᴏᴅᴇ.\n\n2) Iɴʟɪɴᴇ: Rᴇᴛᴜʀɴs Iɴʟɪɴᴇ Mᴀʀᴋᴜᴘ Bᴜᴛᴛᴏɴs ғᴏʀ ᴄʜᴏᴏsɪɴɢ ʙᴇᴛᴡᴇᴇɴ ᴠɪᴅᴇᴏ & ᴀᴜᴅɪᴏ.</blockquote>"
 setting_4 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\n Eᴠᴇʀʏᴏɴᴇ: Aɴʏᴏɴᴇ ᴄᴀɴ ᴜsᴇ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs(sᴋɪᴘ, ᴘᴀᴜsᴇ, ʀᴇsᴜᴍᴇ ᴇᴛᴄ) ᴘʀᴇsᴇɴᴛ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.\n\n Aᴅᴍɪɴ Oɴʟʏ: Oɴʟʏ ᴀᴅᴍɪɴs ᴀɴᴅ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴜsᴇʀs ᴄᴀɴ ᴜsᴇ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs.</blockquote>"
-setting_5 : "<blockquote expandable>Nᴏ Aᴜᴛʜᴏʀɪᴢᴇᴅ Usᴇʀs Fᴏᴜɴᴅ\n\nYᴏᴜ ᴄᴀɴ ᴀʟʟᴏᴡ ᴀɴʏ ɴᴏɴ-ᴀᴅᴍɪɴ ᴛᴏ ᴜsᴇ ᴍʏ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs ʙʏ /auth ᴀɴᴅ ᴅᴇʟᴇᴛᴇ ʙʏ ᴜsɪɴɢ /unauth</blockquote>"
+setting_5 : "Nᴏ Aᴜᴛʜᴏʀɪᴢᴇᴅ Usᴇʀs Fᴏᴜɴᴅ\n\nYᴏᴜ ᴄᴀɴ ᴀʟʟᴏᴡ ᴀɴʏ ɴᴏɴ-ᴀᴅᴍɪɴ ᴛᴏ ᴜsᴇ ᴍʏ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs ʙʏ /auth ᴀɴᴅ ᴅᴇʟᴇᴛᴇ ʙʏ ᴜsɪɴɢ /unauth"
 setting_9 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\nWʜᴇɴ ᴀᴄᴛɪᴠᴀᴛᴇᴅ, Bᴏᴛ ᴡɪʟʟ ᴅᴇʟᴇᴛᴇ ɪᴛs ᴍᴇssᴀɢᴇ ᴀғᴛᴇʀ {0} ᴛᴏ ᴍᴀᴋᴇ ʏᴏᴜʀ ᴄʜᴀᴛ ᴄʟᴇᴀɴ ᴀɴᴅ ᴄʟᴇᴀʀ.</blockquote>"
 setting_10 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\n1) Gʀᴏᴜᴘ: Pʟᴀʏs ᴍᴜsɪᴄ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ ᴡʜᴇʀᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ɪs ɢɪᴠᴇɴ .\n\n2) Cʜᴀɴɴᴇʟ: Pʟᴀʏs ᴍᴜsɪᴄ ɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ʏᴏᴜ ᴡᴀɴᴛ. Sᴇᴛ ᴄʜᴀɴɴᴇʟ ɪᴅ ᴠɪᴀ /channelplay</blockquote>"
 setting_11 : "<blockquote expandable>Wʜᴀᴛ ɪs Tʜɪs?\n\n1) Eᴠᴇʀʏᴏɴᴇ: Aɴʏᴏɴᴇ ᴘʀᴇsᴇɴᴛ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ ᴄᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴄ ʜᴇʀᴇ.\n\n2) Aᴅᴍɪɴ Oɴʟʏ: Oɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴘʟᴀʏ ᴛʜᴇ ᴍᴜsɪᴄ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ.</blockquote>"
