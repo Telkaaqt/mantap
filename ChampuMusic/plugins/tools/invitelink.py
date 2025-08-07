@@ -13,16 +13,16 @@ import asyncio
 @app.on_message(filters.command("leave") & SUDOERS)
 async def leave(_, message):
     if len(message.command) != 2:
-        return await message.reply_text("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ɢʀᴏᴜᴘ ɪᴅ. ᴜsᴇ ʟɪᴋᴇ: /leave chat_id.")
+        return await message.reply_text("<blockquote>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ɢʀᴏᴜᴘ ɪᴅ. ᴜsᴇ ʟɪᴋᴇ: /leave chat_id.</blockquote>")
     try:
         chat_id = int(message.command[1])
     except ValueError:
-        return await message.reply_text(f"ɪɴᴠᴀʟɪᴅ ᴄʜᴀᴛ ɪᴅ. ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ᴀ ɴᴜᴍᴇʀɪᴄ ɪᴅ.")
-    CHAMPU = await message.reply_text(f"ʟᴇᴀᴠɪɴɢ ᴄʜᴀᴛ... {app.me.mention}")
+        return await message.reply_text(f"<blockquote>ɪɴᴠᴀʟɪᴅ ᴄʜᴀᴛ ɪᴅ. ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ᴀ ɴᴜᴍᴇʀɪᴄ ɪᴅ.</blockquote>")
+    CHAMPU = await message.reply_text(f"<blockquote>ʟᴇᴀᴠɪɴɢ ᴄʜᴀᴛ... {app.me.mention}</blockquote>")
     try:
-        await app.send_message(chat_id, f"{app.me.mention} ʟᴇғᴛɪɴɢ ᴄʜᴀᴛ ʙʏᴇ...")
+        await app.send_message(chat_id, f"<blockquote>{app.me.mention} ʟᴇғᴛɪɴɢ ᴄʜᴀᴛ ʙʏᴇ...</blockquote>")
         await app.leave_chat(chat_id)
-        await CHAMPU.edit(f"{app.me.mention} ʟᴇғᴛ ᴄʜᴀᴛ {chat_id}.")
+        await CHAMPU.edit(f"<blockquote>{app.me.mention} ʟᴇғᴛ ᴄʜᴀᴛ {chat_id}.</blockquote>")
     except Exception as e:
         pass
 
@@ -33,7 +33,7 @@ async def give_link_command(client, message):
     # Generate an invite link for the chat where the command is used
     chat = message.chat.id
     link = await app.export_chat_invite_link(chat)
-    await message.reply_text(f"ʜᴇʀᴇ's ᴛʜᴇ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ:\n{link}")
+    await message.reply_text(f"<blockquote>ʜᴇʀᴇ's ᴛʜᴇ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ:\n{link}</blockquote>")
 
 
 @app.on_message(
@@ -54,13 +54,13 @@ async def link_command_handler(client: Client, message: Message):
         chat = await client.get_chat(int(group_id))
 
         if chat is None:
-            await message.reply("ᴜɴᴀʙʟᴇ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ғᴏʀ ᴛʜᴇ sᴘᴇᴄɪғɪᴇᴅ ɢʀᴏᴜᴘ ɪᴅ.")
+            await message.reply("<blockquote>ᴜɴᴀʙʟᴇ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ғᴏʀ ᴛʜᴇ sᴘᴇᴄɪғɪᴇᴅ ɢʀᴏᴜᴘ ɪᴅ.</blockquote>")
             return
 
         try:
             invite_link = await client.export_chat_invite_link(chat.id)
         except FloodWait as e:
-            await message.reply(f"ғʟᴏᴏᴅᴡᴀɪᴛ: {e.x} sᴇᴄᴏɴᴅs. ʀᴇᴛʀʏɪɴɢ ɪɴ {e.x} sᴇᴄᴏɴᴅs.")
+            await message.reply(f"<blockquote>ғʟᴏᴏᴅᴡᴀɪᴛ: {e.x} sᴇᴄᴏɴᴅs. ʀᴇᴛʀʏɪɴɢ ɪɴ {e.x} sᴇᴄᴏɴᴅs.</blockquote>")
             return
 
         group_data = {
@@ -86,7 +86,7 @@ async def link_command_handler(client: Client, message: Message):
         await client.send_document(
             chat_id=message.chat.id,
             document=file_name,
-            caption=f"ʜᴇʀᴇ ɪs ᴛʜᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ғᴏʀ\n{chat.title}\nᴛʜᴇ ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ sᴄʀᴀᴘᴇᴅ ʙʏ : @{app.username}",
+            caption=f"<blockquote expandable>ʜᴇʀᴇ ɪs ᴛʜᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ғᴏʀ\n{chat.title}\nᴛʜᴇ ɢʀᴏᴜᴘ ɪɴғᴏʀᴍᴀᴛɪᴏɴ sᴄʀᴀᴘᴇᴅ ʙʏ : @{app.username}</blockquote>",
         )
 
     except Exception as e:
@@ -99,6 +99,10 @@ async def link_command_handler(client: Client, message: Message):
 
 __MODULE__ = "Gʀᴏᴜᴘ Lɪɴᴋ"
 __HELP__ = """
-- `/givelink`: Gᴇᴛ ᴛʜᴇ ɪɴᴠɪᴛᴇ ɪɴᴋ ғᴏʀ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴄʜᴀᴛ.
-- `/link ɢʀᴏᴜᴘ_ɪᴅ`: Gᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀɴᴅ ɢᴇɴᴇʀᴀᴛᴇ ᴀɴ ɪɴᴠɪᴛᴇ ɪɴᴋ ғᴏʀ ᴛʜᴇ sᴘᴇᴄɪғɪᴇᴅ ɢʀᴏᴜᴘ ID.
+<blockquote expandable>
+<u>- `/givelink`</u>
+Gᴇᴛ ᴛʜᴇ ɪɴᴠɪᴛᴇ ɪɴᴋ ғᴏʀ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴄʜᴀᴛ.
+
+<u>- `/link ɢʀᴏᴜᴘ_ɪᴅ`</u>
+Gᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀɴᴅ ɢᴇɴᴇʀᴀᴛᴇ ᴀɴ ɪɴᴠɪᴛᴇ ɪɴᴋ ғᴏʀ ᴛʜᴇ sᴘᴇᴄɪғɪᴇᴅ ɢʀᴏᴜᴘ ID.<blockquote>
 """
