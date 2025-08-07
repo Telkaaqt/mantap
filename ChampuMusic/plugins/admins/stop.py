@@ -12,7 +12,7 @@ from pyrogram.types import (
 )
 
 from config import BANNED_USERS, adminlist, CHANNEL_USERNAME
-from ChampuMusic.utils.decorators.fsub import require_fsubfrom
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from strings import get_string
 from ChampuMusic import app
 from ChampuMusic.core.call import Champu
