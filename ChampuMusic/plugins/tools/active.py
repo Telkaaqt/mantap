@@ -59,7 +59,7 @@ async def activevc(_, message: Message):
                 else:
                     text += f"<b>{j + 1}.</b> {unidecode(title).upper()} [<code>{x}</code>]\n"
 
-                button_text = f"๏ ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ ๏"
+                button_text = f"ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ"
                 buttons.append([InlineKeyboardButton(button_text, url=invite_link)])
                 j += 1
             else:
@@ -110,7 +110,7 @@ async def activevi_(_, message: Message):
                 else:
                     text += f"<b>{j + 1}.</b> {unidecode(title).upper()} [<code>{x}</code>]\n"
 
-                button_text = f"๏ ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ ๏"
+                button_text = f"ᴊᴏɪɴ {ordinal(j + 1)} ɢʀᴏᴜᴘ"
                 buttons.append([InlineKeyboardButton(button_text, url=invite_link)])
                 j += 1
             else:
@@ -165,24 +165,27 @@ async def start(client: Client, message: Message):
 
     await ok.delete()
     await message.reply_text(
-        f"✫ <b><u>ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs ɪɴғᴏ</u></b> :\n\nᴠᴏɪᴄᴇ : {ac_audio}\nᴠɪᴅᴇᴏ  : {ac_video}",
+        f"<blockquote expandable><b><u>ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs ɪɴғᴏ</u></b> :\n\nᴠᴏɪᴄᴇ : {ac_audio}\nᴠɪᴅᴇᴏ  : {ac_video}</blockquote>",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("✯ ᴄʟᴏsᴇ ✯", callback_data=f"close")]]
+            [[InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data=f"close")]]
         ),
     )
 
 
 __MODULE__ = "Aᴄᴛɪᴠᴇ"
 __HELP__ = """
-## Aᴄᴛɪᴠᴇ Vᴏɪᴄᴇ/Vɪᴅᴇᴏ Cʜᴀᴛs Cᴏᴍᴍᴀɴᴅs
+<blockquote expandable><n>Aᴄᴛɪᴠᴇ Vᴏɪᴄᴇ/Vɪᴅᴇᴏ Cʜᴀᴛs Cᴏᴍᴍᴀɴᴅs</n>
 
-/activevc ᴏʀ /activevoice - Lɪsᴛs ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ɪɴ ᴀ sᴇʀᴠᴇᴅ ɢʀᴏᴜᴘs.
+<u>/activevc ᴏʀ /activevoice</u>
+Lɪsᴛs ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ɪɴ ᴀ sᴇʀᴠᴇᴅ ɢʀᴏᴜᴘs.
 
-/activev ᴏʀ /activevideo - Lɪsᴛs ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ɪɴ ᴀ sᴇʀᴠᴇᴅ ɢʀᴏᴜᴘs.
+<u>/activev ᴏʀ /activevideo</u>
+Lɪsᴛs ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ɪɴ ᴀ sᴇʀᴠᴇᴅ ɢʀᴏᴜᴘs.
 
-/ac - Dɪsᴘᴀʏs ᴛʜᴇ ᴄᴏᴜɴᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴀɴᴅ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs.
+<u>/ac</u>
+Dɪsᴘᴀʏs ᴛʜᴇ ᴄᴏᴜɴᴛ ᴏғ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴀɴᴅ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs.
 
-**Nᴏᴛᴇs:**
-- Oɴʏ SUDOERS ᴄᴀɴ ᴜsᴇ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs.
-- Aᴜᴛᴏᴍᴀᴛɪᴄᴀʏ ɢᴇɴᴇʀᴀᴛᴇs ᴊᴏɪɴ ɪɴᴋs ғᴏʀ ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs.
+<n>Nᴏᴛᴇs</n>
+<u>Oɴʏ SUDOERS ᴄᴀɴ ᴜsᴇ ᴛʜᴇsᴇ ᴄᴏᴍᴍᴀɴᴅs.</u>
+<u>Aᴜᴛᴏᴍᴀᴛɪᴄᴀʏ ɢᴇɴᴇʀᴀᴛᴇs ᴊᴏɪɴ ɪɴᴋs ғᴏʀ ᴀᴄᴛɪᴠᴇ ᴄʜᴀᴛs.</u></blockquote>
 """
