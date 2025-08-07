@@ -1,7 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from config import BANNED_USERS
+from config import BANNED_USERS, CHANNEL_USERNAME
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from ChampuMusic import app
 from ChampuMusic.core.call import Champu
 from ChampuMusic.utils.database import is_music_playing, music_on
@@ -9,6 +10,7 @@ from ChampuMusic.utils.decorators import AdminRightsCheck
 
 
 @app.on_message(filters.command(["resume", "cresume"]) & filters.group & ~BANNED_USERS)
+@require_fsub
 @AdminRightsCheck
 async def resume_com(cli, message: Message, _, chat_id):
     if await is_music_playing(chat_id):
