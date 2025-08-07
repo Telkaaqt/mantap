@@ -10,7 +10,7 @@ def require_fsub(func):
                 raise Exception()
         except:
             return await message.reply_photo(
-                photo="https://files.catbox.moe/ug9gtq.jpg",  # ganti dengan URL gambarmu
+                photo="https://files.catbox.moe/s2kmx1.jpg",  # ganti dengan URL gambarmu
                 caption="<blockquote>ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ɪɴɪ, sɪʟᴀᴋᴀɴ Jᴏɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ.</blockquote>",
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{CHANNEL_USERNAME}")]]
