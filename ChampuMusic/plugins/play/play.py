@@ -62,7 +62,7 @@ async def play_commnd(
     userbot_id = userbot.id
     user_id = message.from_user.id
     current_time = time()
-    last_message_time =
+    last_message_time = user_last_massage_time.get(user_id, 0)
 
     # Spam check logic
     if current_time - last_message_time < SPAM_WINDOW_SECONDS:
