@@ -1,7 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from config import BANNED_USERS
+from config import BANNED_USERS, CHANNEL_USERNAME
+from ChampuMusic.utils.decorators.fsub import require_fsub
 from ChampuMusic import app
 from ChampuMusic.core.call import Champu
 from ChampuMusic.utils.database import is_muted, mute_off, mute_on
@@ -9,6 +10,7 @@ from ChampuMusic.utils.decorators import AdminRightsCheck
 
 
 @app.on_message(filters.command(["vcmute"]) & filters.group & ~BANNED_USERS)
+@require_fsub
 @AdminRightsCheck
 async def mute_admin(cli, message: Message, _, chat_id):
     if not len(message.command) == 1 or message.reply_to_message:
