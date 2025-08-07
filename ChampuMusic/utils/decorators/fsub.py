@@ -9,8 +9,9 @@ def require_fsub(func):
             if member.status in ("left", "kicked"):
                 raise Exception()
         except:
-            return await message.reply_text(
-                "<blockquote>ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ɪɴɪ, sɪʟᴀᴋᴀɴ Jᴏɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ.</blockquote>",
+            return await message.reply_photo(
+                photo="https://files.catbox.moe/ug9gtq.jpg",  # ganti dengan URL gambarmu
+                caption="<blockquote>ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ɪɴɪ, sɪʟᴀᴋᴀɴ Jᴏɪɴ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ.</blockquote>",
                 reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton("Jᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{CHANNEL_USERNAME}")]]
                 )
