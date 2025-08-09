@@ -108,7 +108,7 @@ class ChampuBot(Client):
                         BotCommand("vctag", "ᴛᴀɢᴀʟʟ ғᴏʀ ᴠᴄ"),
                         BotCommand("stopvctag", "sᴛᴏᴘ ᴛᴀɢᴀʟʟ ғᴏʀ ᴠᴄ"),
                         BotCommand("all", "ᴛᴀɢ ᴀʟʟ ᴍᴇᴍʙᴇʀs ʙʏ ᴛᴇxᴛ"),
-                        BotCommand("tagoff", "ᴄᴀɴᴄᴇʟ ᴛʜᴇ ᴛᴀɢɢɪɴɢ"),
+                        BotCommand("cancel", "ᴄᴀɴᴄᴇʟ ᴛʜᴇ ᴛᴀɢɢɪɴɢ"),
                         BotCommand("settings", "ᴛᴏ ɢᴇᴛ ᴛʜᴇ sᴇᴛᴛɪɴɢs"),
                         BotCommand("reload", "ᴛᴏ ʀᴇʟᴏᴀᴅ ᴛʜᴇ ʙᴏᴛ"),
                         BotCommand("play", "ᴛᴏ ᴘʟᴀʏ ᴛʜᴇ sᴏɴɢ"),
