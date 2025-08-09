@@ -17,6 +17,22 @@ playlist = []
 
 # Playlist
 
+afkdb = mongodb.afk_status  # collection untuk status AFK
+
+async def set_afk(user_id: int, reason: str):
+    from datetime import datetime
+    await afkdb.update_one(
+        {"user_id": user_id},
+        {"$set": {"reason": reason, "start": datetime.utcnow()}},
+        upsert=True
+    )
+
+async def get_afk(user_id: int):
+    return await afkdb.find_one({"user_id": user_id})
+
+async def remove_afk(user_id: int):
+    await afkdb.delete_one({"user_id": user_id})
+
 
 async def _get_playlists(chat_id: int) -> Dict[str, int]:
     _notes = await playlistdb.find_one({"chat_id": chat_id})
