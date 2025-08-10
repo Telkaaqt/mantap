@@ -118,59 +118,49 @@ photo = [
 async def assistant_banned(client: app, member: ChatMemberUpdated):
     chat_id = member.chat.id
     userbot = await get_assistant(chat_id)
+
     try:
-        userbot = await get_assistant(member.chat.id)
-        get = await app.get_chat_member(chat_id, userbot.id)
-        if get.status in [ChatMemberStatus.BANNED]:
+        # Kalau update ini berkaitan dengan assistant bot
+        if member.new_chat_member.user.id == userbot.id:
+            if member.new_chat_member.status == ChatMemberStatus.BANNED:
+                remove_by = member.from_user.mention if member.from_user else "<blockquote>𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ</blockquote>"
+                title = member.chat.title
+                username = (
+                    f"@{member.chat.username}" if member.chat.username else "<blockquote>𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ</blockquote>"
+                )
 
-            # Assistant bot has been banned
-            remove_by = member.from_user.mention if member.from_user else "<blockquote>𝐔ɴᴋɴᴏᴡɴ 𝐔sᴇʀ</blockquote>"
-            chat_id = member.chat.id
-            title = member.chat.title
-            username = (
-                f"@{member.chat.username}" if member.chat.username else "<blockquote>𝐏ʀɪᴠᴀᴛᴇ 𝐂ʜᴀᴛ</blockquote>"
-            )
-
-            # Construct message
-            left_message =f"""<blockquote expandable>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱\n║\n
+                left_message = f"""<blockquote expandable>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁_𝗕𝗮𝗻𝗻𝗲𝗱❱\n║\n
                 𝐂ʜᴀᴛ » {title}\n║\n
                 𝐀ssɪsᴛᴀɴᴛ 𝐈ᴅ » {userbot.id}\n║\n
                 𝐍ᴀᴍᴇ » @{userbot.username}\n║\n
                 𝐁ᴀɴ 𝐁ʏ » {remove_by}\n</blockquote>"""
 
-            # Create keyboard for unban button
-            keyboard = InlineKeyboardMarkup(
-                [
+                keyboard = InlineKeyboardMarkup(
                     [
-                        InlineKeyboardButton(
-                            "𝐔𝐧𝐛𝐚𝐧 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭",
-                            callback_data="unban_userbot",
-                        )
+                        [
+                            InlineKeyboardButton(
+                                "𝐔𝐧𝐛𝐚𝐧 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭",
+                                callback_data="unban_userbot",
+                            )
+                        ]
                     ]
-                ]
-            )
+                )
 
-            # Send photo with the left message and keyboard
-            await app.send_photo(
-                chat_id,
-                photo=random.choice(photo),
-                caption=left_message,
-                reply_markup=keyboard,
-                
-            )
-            # Perform actions like stopping streams or loops
-            await Champu.st_stream(chat_id)
-            await set_loop(chat_id, 0)
-            await app.unban_chat_member(chat_id, userbot.id)
-            await asyncio.sleep(10)
-    except UserNotParticipant:
-        await Champu.st_stream(chat_id)
-        await set_loop(chat_id, 0)
-        await app.unban_chat_member(chat_id, userbot.id)
-        await asyncio.sleep(10)
-        return
+                await app.send_photo(
+                    chat_id,
+                    photo=random.choice(photo),
+                    caption=left_message,
+                    reply_markup=keyboard,
+                )
+
+                # Hentikan musik, reset loop, unban, lalu tunggu
+                await Champu.st_stream(chat_id)
+                await set_loop(chat_id, 0)
+                await app.unban_chat_member(chat_id, userbot.id)
+                await asyncio.sleep(10)
+
     except Exception as e:
-        return
+        print(f"[assistant_banned] Error: {e}")
 
 
 @app.on_chat_member_updated(filters.group, group=-8)
