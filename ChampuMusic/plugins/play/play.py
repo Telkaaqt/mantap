@@ -53,6 +53,7 @@ SPAM_THRESHOLD = 2
     & filters.group
     & ~BANNED_USERS
 )
+@require_fsub
 @PlayWrapper
 async def play_commnd(
     client, message: Message, _, chat_id, video, channel, playmode, url, fplay
