@@ -64,10 +64,8 @@ class Userbot(Client):
             try:
                 await self.one.send_message(config.LOGGER_ID, "ᴀssɪsᴛᴀɴᴛ sᴛᴀʀᴛᴇᴅ !")
 
-            except:
-                LOGGER(__name__).error(
-                    "ᴀssɪsᴛᴀɴᴛ ᴀᴄᴄᴏᴜɴᴛ 1 ʜᴀs ғᴀɪʟᴇᴅ ᴛᴏ ᴀᴄᴄᴇss ᴛʜᴇ ʟᴏɢ ɢʀᴏᴜᴘ. ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜᴀᴛ ʏᴏᴜ ʜᴀᴠᴇ ᴀᴅᴅᴇᴅ ʏᴏᴜʀ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ʏᴏᴜʀ ʟᴏɢ ɢʀᴏᴜᴘ ᴀɴᴅ ᴘʀᴏᴍᴏᴛᴇᴅ ᴀs ᴀᴅᴍɪɴ!"
-                )
+            except Exception as e:
+                print(f"{e}")
             self.one.id = self.one.me.id
             self.one.name = self.one.me.mention
             self.one.username = self.one.me.username
