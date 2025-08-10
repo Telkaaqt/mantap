@@ -43,6 +43,9 @@ LOOP_COMMAND : ["loop", "cloop"]
 SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback"]
 REBOOT_COMMAND : ["reboot", "end", "stop"]
 
+# Afk Commands
+AFK_COMMAND : ["afk", "brb"]
+
 # Sudo Users Commaands
 
 # Sudo Command
