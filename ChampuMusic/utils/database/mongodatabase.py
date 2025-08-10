@@ -12,12 +12,12 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 blockeddb = mongodb.blockedusers
 privatedb = mongodb.privatechats
+afkdb = mongodb.afk_status
 
 playlist = []
 
 # Playlist
 
-afkdb = mongodb.afk_status  # collection untuk status AFK
 
 async def set_afk(user_id: int, reason: str):
     from datetime import datetime
