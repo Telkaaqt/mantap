@@ -121,11 +121,11 @@ def PlayWrapper(command):
                         return await message.reply_text(_["play_4"])
         if message.command[0][0] == "v":
             video = True
-        slif message.command[0] == "play":
+        elif message.command[0] == "play":
             video = False
         else:
             if "-v" in message.text:
-                video = False
+                video = True
             else:
                 video = False
         if message.command[0][-1] == "e":
