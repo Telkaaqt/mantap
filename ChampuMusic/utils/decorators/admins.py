@@ -39,8 +39,8 @@ def AdminRightsCheck(mystic):
                 [
                     [
                         InlineKeyboardButton(
-                            text="<blockquote>How to Fix this?</blockquote>",
-                            callback_data="<blockquote>AnonymousAdmin</blockquote>",
+                            text="ow to Fix this?",
+                            callback_data="AnonymousAdmin",
                         ),
                     ]
                 ]
@@ -94,8 +94,8 @@ def AdminActual(mystic):
                 [
                     [
                         InlineKeyboardButton(
-                            text="<blockquote>How to Fix this?</blockquote>",
-                            callback_data="<blockquote>AnonymousAdmin</blockquote>",
+                            text="How to Fix this?",
+                            callback_data="AnonymousAdmin",
                         ),
                     ]
                 ]
