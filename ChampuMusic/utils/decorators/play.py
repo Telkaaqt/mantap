@@ -51,13 +51,13 @@ def PlayWrapper(command):
         if await is_maintenance() is False:
             if message.from_user.id not in SUDOERS:
                 return await message.reply_text(
-                    text=f"{app.mention} ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ, ᴠɪsɪᴛ <a href={SUPPORT_GROUP}>sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ</a> ғᴏʀ ᴋɴᴏᴡɪɴɢ ᴛʜᴇ ʀᴇᴀsᴏɴ.",
+                    text=f"<blockquote>{app.mention} ɪs ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ, ᴠɪsɪᴛ <a href={SUPPORT_GROUP}>sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ</a> ғᴏʀ ᴋɴᴏᴡɪɴɢ ᴛʜᴇ ʀᴇᴀsᴏɴ.</blockquote>",
                     disable_web_page_preview=True,
                 )
         if PRIVATE_BOT_MODE == str(True):
             if not await is_served_private_chat(message.chat.id):
                 await message.reply_text(
-                    "**ᴘʀɪᴠᴀᴛᴇ ᴍᴜsɪᴄ ʙᴏᴛ**\n\nᴏɴʟʏ ғᴏʀ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴄʜᴀᴛs ғʀᴏᴍ ᴛʜᴇ ᴏᴡɴᴇʀ. ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ ᴛᴏ ᴀʟʟᴏᴡ ʏᴏᴜʀ ᴄʜᴀᴛ ғɪʀsᴛ."
+                    "<blockquote>**ᴘʀɪᴠᴀᴛᴇ ᴍᴜsɪᴄ ʙᴏᴛ**\n\nᴏɴʟʏ ғᴏʀ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴄʜᴀᴛs ғʀᴏᴍ ᴛʜᴇ ᴏᴡɴᴇʀ. ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ ᴛᴏ ᴀʟʟᴏᴡ ʏᴏᴜʀ ᴄʜᴀᴛ ғɪʀsᴛ.</blockquote>"
                 )
                 return await app.leave_chat(message.chat.id)
         if await is_commanddelete_on(message.chat.id):
@@ -104,7 +104,7 @@ def PlayWrapper(command):
             is_call_active = (await app.get_chat(chat_id)).is_call_active
             if not is_call_active:
                 return await message.reply_text(
-                    f"**» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ғᴏᴜɴᴅ.**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
+                    f"<blockquote>**» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ғᴏᴜɴᴅ.**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ.</blockquote>"
                 )
         except Exception:
             pass
@@ -125,7 +125,7 @@ def PlayWrapper(command):
             if "-v" in message.text:
                 video = True
             else:
-                video = True if message.command[0][1] == "v" else None
+                video = False if message.command[0][1] == "v" else None
         if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
@@ -357,7 +357,7 @@ def CPlayWrapper(command):
             if "-v" in message.text:
                 video = True
             else:
-                video = True if message.command[0][1] == "v" else None
+                video = False if message.command[0][1] == "v" else None
         if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
