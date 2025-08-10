@@ -121,11 +121,13 @@ def PlayWrapper(command):
                         return await message.reply_text(_["play_4"])
         if message.command[0][0] == "v":
             video = True
+        slif message.command[0] == "play":
+            video = False
         else:
             if "-v" in message.text:
                 video = False
             else:
-                video = True if message.command[0][1] == "v" else None
+                video = False
         if message.command[0][-1] == "e":
             if not await is_active_chat(chat_id):
                 return await message.reply_text(_["play_18"])
