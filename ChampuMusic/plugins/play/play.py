@@ -429,7 +429,7 @@ async def play_commnd(
                 chat_id,
                 user_name,
                 message.chat.id,
-                video=False,
+                video=video,
                 streamtype=streamtype,
                 spotify=spotify,
                 forceplay=fplay,
