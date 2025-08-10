@@ -120,10 +120,10 @@ def PlayWrapper(command):
                     if message.from_user.id not in admins:
                         return await message.reply_text(_["play_4"])
         if message.command[0][0] == "v":
-            video = False
+            video = True
         else:
             if "-v" in message.text:
-                video = True
+                video = False
             else:
                 video = True if message.command[0][1] == "v" else None
         if message.command[0][-1] == "e":
