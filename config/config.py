@@ -51,7 +51,7 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOGGER_ID = int(getenv("LOGGER_ID", "-1002693987692"))
+LOGGER_ID = int(getenv("LOGGER_ID", ""))
 
 # Your User ID.
 OWNER_ID = list(
@@ -66,14 +66,14 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/levine23/mantap",
+    "https://github.com/levine23",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "dev")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", ""
 )  # Fill this variable if your upstream repository is private
 
-# Only  Links formats are  accepted for this Var value.
+# Only  Links or username formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
     "SUPPORT_CHANNEL", "https://t.me/mksyabup"
 )  # Example:- https://t.me/mksyabup
@@ -81,7 +81,7 @@ SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/mksyabup"
 )  # Example:- https://t.me/mksyabup
 CHANNEL_USERNAME = getenv("CHANNEL_USERNAME", "mksyabup")
-#Channel Fsub:- channel username tanpa @
+# Channel Fsub:- channel username tanpa @
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", False)
@@ -103,12 +103,12 @@ TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
 
 # Your Github Repo.. Will be shown on /start Command
-GITHUB_REPO = getenv("GITHUB_REPO", "https://github.com/levine23/LevineXMusic")
+GITHUB_REPO = getenv("GITHUB_REPO", "https://github.com/levine23")
 
 
 # Spotify Client.. Get it from https://developer.spotify.com/dashboard
-SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "27abb49d299c4a9abbd5aba126ad3c69")
-SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "d7b2393eb88e4acfba14358e8d1eff7d")
+SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "123")
+SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "123")
 
 
 # Maximum number of video calls allowed on bot. You can later set it via /set_video_limit on telegram
@@ -129,12 +129,12 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "3145728000")) #
 # Chceckout https://www.gbmb.org/mb-to-bytes  for converting mb to bytes
 
 
-# If you want your bot to setup the commands automatically in the bot's menu set it to true.
+# Commands automatically in the bot's menu set it to true.
 # Refer to https://i.postimg.cc/Bbg3LQTG/image.png
 SET_CMDS = getenv("SET_CMDS", True)
 
 
-# You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @ChampuStringBot
+# You'll need a Pyrogram String Session for these vars. 
 STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
@@ -142,17 +142,7 @@ STRING4 = getenv("STRING_SESSION4", None)
 STRING5 = getenv("STRING_SESSION5", None)
 
 
-
-#   ░█████╗░██╗░░██╗░█████╗░███╗░░░███╗██████╗░██╗░░░██╗
-#   ██╔══██╗██║░░██║██╔══██╗████╗░████║██╔══██╗██║░░░██║
-#   ██║░░╚═╝███████║███████║██╔████╔██║██████╔╝██║░░░██║
-#   ██║░░██╗██╔══██║██╔══██║██║╚██╔╝██║██╔═══╝░██║░░░██║
-#   ╚█████╔╝██║░░██║██║░░██║██║░╚═╝░██║██║░░░░░╚██████╔╝
-#   ░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░░╚═════╝░     
-
-
-
-### DONT TOUCH or EDIT codes after this line
+### Ubah link pict aja, yang lain jangan
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
@@ -167,7 +157,7 @@ clean = {}
 autoclean = []
 
 
-# Images
+# Image
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
