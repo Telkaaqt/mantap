@@ -20,14 +20,16 @@ async def init():
         and not config.STRING5
     ):
         LOGGER("ChampuMusic").error(
-            "ᴀssɪsᴛᴀɴᴛ ᴄʟɪᴇɴᴛ ᴠᴀʀɪᴀʙʟᴇs ɴᴏᴛ ᴅᴇғɪɴᴇᴅ, ᴇxɪᴛɪɴɢ..."
+            "Assistant client variables not defined, exiting..."
         )
         return
+
     if not config.SPOTIFY_CLIENT_ID and not config.SPOTIFY_CLIENT_SECRET:
         LOGGER("ChampuMusic").warning(
-            "ɴᴏ sᴘᴏᴛɪғʏ ᴠᴀʀs ᴅᴇғɪɴᴇᴅ. ʏᴏᴜʀ ʙᴏᴛ ᴡᴏɴ'ᴛ ʙᴇ ᴀʙʟᴇ ᴛᴏ ᴘʟᴀʏ sᴘᴏᴛɪғʏ ǫᴜᴇʀɪᴇs..."
+            "No Spotify vars defined. Your bot won't be able to play Spotify queries..."
         )
 
+    # Load banned users
     try:
         users = await get_gbanned()
         for user_id in users:
@@ -38,20 +40,20 @@ async def init():
     except Exception:
         pass
 
+    # Load plugins
     for all_module in ALL_MODULES:
         imported_module = importlib.import_module(all_module)
-
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
             if hasattr(imported_module, "__HELP__") and imported_module.__HELP__:
                 HELPABLE[imported_module.__MODULE__.lower()] = imported_module
-    LOGGER("ChampuMusic.plugins").info("sᴜᴄᴄᴇssғᴜʟʟʏ ɪᴍᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs...")
+    LOGGER("ChampuMusic.plugins").info("Successfully imported modules...")
 
+    # Start assistant
+    await userbot.start()
+
+    # Start main bot voice handler
     await Champu.start()
     await Champu.decorators()
-    LOGGER("ChampuMusic").info("sᴜᴄᴄᴇssғᴜʟʟʏ start")
+    LOGGER("ChampuMusic").info("Successfully started")
+
     await idle()
-
-
-if __name__ == "__main__":
-    asyncio.get_event_loop_policy().get_event_loop().run_until_complete(init())
-    LOGGER("ChampuMusic").info("sᴛᴏᴘᴘɪɴɢ ᴄʜᴀᴍᴘᴜᴍᴜsɪᴄ! ɢᴏᴏᴅʙʏᴇ")
