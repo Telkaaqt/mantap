@@ -134,6 +134,7 @@ def PlayWrapper(command):
                 )
 
             # Handle public and private group cases
+            get = None
             try:
                 get = await app.get_chat_member(chat_id, userbot.id)
 
