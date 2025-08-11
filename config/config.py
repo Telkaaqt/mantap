@@ -76,18 +76,19 @@ GIT_TOKEN = getenv(
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
     "SUPPORT_CHANNEL", "https://t.me/mksyabup"
-)  # Example:- https://t.me/akaChampu
+)  # Example:- https://t.me/mksyabup
 SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/mksyabup"
-)  # Example:- https://t.me/TheChampuClub
+)  # Example:- https://t.me/mksyabup
 CHANNEL_USERNAME = getenv("CHANNEL_USERNAME", "mksyabup")
-#channel fsub
+#Channel Fsub:- channel username tanpa @
+
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
-AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
+AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", False)
 
 # Time after which you're assistant account will leave chats automatically.
 AUTO_LEAVE_ASSISTANT_TIME = int(
-    getenv("ASSISTANT_LEAVE_TIME", "43200")
+    getenv("ASSISTANT_LEAVE_TIME", 43200)
 )  # Remember to give value in Seconds
 
 # Set it true if you want your bot to be private only [You'll need to allow CHAT_ID via /authorize command then only your bot will play music in that chat.]
