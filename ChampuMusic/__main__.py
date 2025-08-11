@@ -48,9 +48,6 @@ async def init():
                 HELPABLE[imported_module.__MODULE__.lower()] = imported_module
     LOGGER("ChampuMusic.plugins").info("Successfully imported modules...")
 
-    # Start assistant
-    await userbot.start()
-
     # Start main bot voice handler
     await Champu.start()
     await Champu.decorators()
